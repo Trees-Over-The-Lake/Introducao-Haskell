@@ -1,17 +1,14 @@
 main := src/Haskell.tex
 build_directory := build
+pdf := Haskell.pdf
 
 all: $(main)
+	mkdir -p $(build_directory); \
 	cd $(build_directory); \
-	latexmk -pdf ../$(main)
+	latexmk -pdf ../$(main); \
+	cp $(pdf) ../$(pdf)
 
 .PHONY: clean
 clean:
-	find . -name *.toc -delete
-	find . -name *.pdf -delete
-	find . -name *.log -delete
-	find . -name *.fls -delete
-	find . -name *.aux -delete
-	
-	find . -name *.synctex.gz  -delete
-	find . -name *.fdb_latexmk -delete	
+	rm -rf $(build_directory)
+	rm $(pdf)
