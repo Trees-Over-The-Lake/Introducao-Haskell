@@ -1,29 +1,30 @@
 \documentclass[
-	% -- opções da classe memoir --
-	article,			% indica que é um artigo acadêmico
-	11pt,				% tamanho da fonte
-	oneside,			% para impressão apenas no recto. Oposto a twoside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	sumario=tradicional
+    % -- opções da classe memoir --
+    article,			       % indica que é um artigo acadêmico
+    11pt,				         % tamanho da fonte
+    oneside,			       % para impressão apenas no recto. Oposto a twoside
+    a4paper,			       % tamanho do papel. 
+    % -- opções da classe abntex2 --
+    %chapter=TITLE,		   % títulos de capítulos convertidos em letras maiúsculas
+    %section=TITLE,		   % títulos de seções convertidos em letras maiúsculas
+    %subsection=TITLE,	 % títulos de subseções convertidos em letras maiúsculas
+    %subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+    % -- opções do pacote babel --
+    english,		       	 % idioma adicional para hifenização
+    brazil,			      	 % o último idioma é o principal do documento
+    sumario=tradicional
 	]{abntex2}
+
 % ---
 % Pacotes fundamentais 
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{lmodern}		        	% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}      		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}   		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}	      	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				        % Controle das cores
+\usepackage{graphicx}			        % Inclusão de gráficos
+\usepackage{microtype} 			      % para melhorias de justificação
 % ---
 
 % ---
@@ -31,6 +32,21 @@
 % ---
 \usepackage{lipsum}				% para geração de dummy text
 % ---
+
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Modelo de artigo científico com abnTeX2},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=black,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
 
 % ---
 % Pacotes de citações
@@ -44,6 +60,9 @@
 
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+\SingleSpacing
 
 
 \titulo{Uma Introdução a Haskell}
@@ -63,9 +82,11 @@
 
     \imprimircapa
 
-    \tableofcontents*
+    \tableofcontents
 
     \textual
+
+    \newpage
 
     \chapter{Introdução}
 
@@ -121,6 +142,8 @@
 
     \chapter{Características mais marcantes da linguagem}
 
+    \cite{memoir}
+
     \begin{itemize}
       \item Como dito anteriormente, a linguagem só faz utilização de funções e funções dentro de funções. Por isso
       Haskell é descrito como puramente funcional.
@@ -148,6 +171,10 @@
     \chapter{Exemplo(s) de programa(s)}
     \chapter{Estudo de Caso, sobre o(s) tema(s)}
     \chapter{Considerações finais}
+
+    \newpage
+
+    \bibliography{abntex2-modelo-references}
 
     \begin{apendicesenv}
 
