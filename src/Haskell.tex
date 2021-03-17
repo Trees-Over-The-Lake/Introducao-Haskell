@@ -38,6 +38,8 @@
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
+% Setando o path para acessar as imagens
+\graphicspath{{../images/}}
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -67,6 +69,7 @@
 
     \textual
 
+    \newpage
     \chapter{Introdução}
 
     Em 1930, Alonzo Church , matemático estadunidense apresentou o Cálculo Lambda, como parte da investigação dos fundamentos da matemática. O Cálculo Lambda é um sistema que
@@ -78,28 +81,15 @@
     havia um padrão para as linguagens desse paradigma, e quando chegou a segunda metade da década de 80, havia uma necessidade para criar uma única linguagem, que englobasse
     as melhores práticas de projeto, além de implementar as técnicas funcionais que estavam em alta na época.
 
-    Em Setembro de 1987, aconteceu a conferência \emph{Functional Programming Language and Computer Architecture} em Portland - Oregon, para que fosse discutido justamente
-    tais questões.
 
-    Dessa conferência, surgiu as seguintes diretrizes:
-    \begin{itemize}
-      \item Ser viável para o ensino, pesquisa e aplicações, incluindo sistema de larga escala;
-      \item Ser completamente descritiva via publicação no tocante à sua sintaxe e sua semântica;
-      \item Não ser proprietária, tal que qualquer um pudesse implementá-la e distribuí-la;
-      \item Basear-se em ideias que envolvessem o senso comum;
-      \item Reduzir a diversidade desnecessária de outras linguagens funcionais.
-    \end{itemize}
-
-    Além disso, eles decidiram não começar do zero, e elegeu a linguagem Miranda, como base do projeto, por ser a mais amadurecida e bem projetada entre as demais. E 
-    foi a partir dessa linguagem, que nasceu Haskell.
-
+    \newpage
     \chapter{Histórico sobre a linguagem, com sua cronologia}
 
-    A criação do Haskell se deu 1987, quando Peyton Jones e Paul Hudak fizeram uma reunião no meio da FPCA (Functional  Program-ming and Computer Architecture Conference)
-    para criar uma linguagem de programação funcioanal e comum. 
+    A criação do Haskell se deu 1987, quando Peyton Jones e Paul Hudak fizeram uma reunião no meio da FPCA (Functional  Programming and Computer Architecture Conference)
+    para criar uma linguagem de programação funcional e comum. 
     
-    Como ponto de partida a equipe decidiu por escolher uma linguagem já existia como ponto de partida para seu projeto.
-    A linguagem Miranda foi a escolhida, por ter um design robusto e intuitivo, ela atendia a maioria das metas estabelicidas e 
+    Como ponto de partida a equipe decidiu por escolher uma linguagem que já existia como ponto de partida para seu projeto.
+    A linguagem Miranda foi a escolhida, por ter um design robusto e intuitivo, ela atendia a maioria das metas estabelecidas e 
     além de estar sendo utilizada em sites. 
 
     Porém após algumas conversas, David Turner (criador da Miranda) não autorizou o uso da Miranda. Isso se deve pelo fato dos objetivos
@@ -107,9 +97,9 @@
 
     Por mais que a Miranda não pudesse ser utilizada, a equipe se inpirou na linguagem e adotou elementos especificos.  
     Sendo assim, a implementação do Haskell começou do zero, permitindo assim o desenvolvimento mais fluido da linguagem 
-    e o criação de funções únicas.
+    e a criação de funções únicas.
     
-    The Yale Meeting foi a primeira reunião presencial que ocorreu logo apóes a reunião FPCA, no qual foi decidido
+    The Yale Meeting foi a primeira reunião presencial que ocorreu logo após a reunião FPCA, no qual foi decidido
     os principais objetivos que a linguagem proporcionaria, como também a escolha do nome para a nova linguagem. 
     Segue as metas estabelecidas na reunião:
 
@@ -121,7 +111,29 @@
       \item Reduzir a diversidade desnecessária de outras linguagens funcionais.
     \end{itemize}
 
+    Depois desse evento, outras reuniões se sucederam e sendo assim no dia 01/04/1990, foi publicado primeiro relatório
+    da versão 1.0 do Haskell. Durante os proximos 15 anos, Haskell teve o lançamento de diferentes versões, tranzendo outras
+    funcionalidades para linguagem, entre elas se encontra Haskell'98 e Haskell 2010 que é a versão mais recente de Haskell.  
+
+    Dando um pouco de enfasê para o Haskell 2010, as funcionalidades:
     
+    \begin{itemize}
+      \item Do and If Then Else 
+      \item Hierarchical Modules
+      \item Empty Data Declarations
+      \item Fixity Resolution 
+      \item Foreign Function Interface
+      \item Line Comment Syntax
+      \item Pattern Guards
+      \item Relaxed Dependency Analysis
+      \item Language Pragma
+      \item Remove n+k patterns
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \includegraphics[width =\textwidth]{timeline.png}
+      \caption{Cronologia do Haskell}
+    \end{figure}
 
     \chapter{Paradigma a que pertence}
 
@@ -169,10 +181,34 @@
     \chapter{Estudo de Caso, sobre o(s) tema(s)}
     \chapter{Considerações finais}
 
+    \bibliography{abntex2-modelo-references}
     \begin{apendicesenv}
 
         \partapendices
-        \chapter{Teste}
+        \chapter{Gustavo Lopes}
+
+        O que eu achei de Haskell? Como um usuário de longa data de linguagens orientadas a objeto, 
+        como Java, C++ e mais recentemente Dart, minha experiência inicial com Haskell foi...
+        um pouco estranha. Fiquei muito curioso e até encucado em ver Haskell executar códigos, que em
+        outras linguagens precisariam ocupar 50 linhas, em apenas 2 ou 3 linhas, como foi o Quicksort.
+
+        Além disso, lendo sua história, achei extremamente fascinante toda a concepção do Haskell,
+        mas fiquei até triste, vendo que é muito difícil encontrar muitas pessoas falando sobre essa linguagem, que nasceu 
+        do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
+
+        Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
+        sua versão para Haskell, chamada WxHaskell.
+
+        \begin{figure}[ht]
+          \includegraphics[width =\textwidth]{gebob.png}
+          \caption{GeBoP, um jogo de tabuleiro feito em Haskell}
+        \end{figure}
+
+        \newpage
+        \chapter{Thiago Henriques}
+
+
     
     \end{apendicesenv}
 
