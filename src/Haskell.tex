@@ -32,12 +32,39 @@
 \usepackage{lipsum}				% para geração de dummy text
 % ---
 
+% Definindo a formatação do listing de codigo
+\usepackage{listings}
+
 % ---
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{gray}{0.6}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -146,6 +173,32 @@
     \end{itemize}
 
     \chapter{Exemplo(s) de programa(s)}
+
+    \subsection*{Hello World em Haskell}
+      \lstinputlisting[language=haskell]{helloworld.hs}
+
+    \subsection*{Quicksort}
+      Exemplo de Quicksort em C: \newline
+      \lstinputlisting[language=c]{quicksort.c}
+      Exemplo de Quicksort em Haskell usando compreensão de lista \newline
+      \lstinputlisting[language=haskell]{quicksort_list.hs}      
+      Exemplo de Quicksort em Haskell usando a função filter: \newline
+      \lstinputlisting[language=haskell]{quicksort_filter.hs}
+
+      \subsection*{Explicação dos algoritmos}
+      Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
+      em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
+      para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
+
+      No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
+      foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
+      cria uma função recursiva e 
+
+      aSDASDASD ASD ASD ASD AS DAExemplo de Quicksort em Haskell usando a função filter: \newline
+      \lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
+      ASDASDAS DASD ASD ASD ASExemplo de Quicksort em Haskell usando a função filter: \newline
+      \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
+
     \chapter{Estudo de Caso, sobre o(s) tema(s)}
     \chapter{Considerações finais}
 
