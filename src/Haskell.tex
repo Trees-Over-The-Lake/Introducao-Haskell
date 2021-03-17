@@ -1,19 +1,20 @@
 \documentclass[
-    % -- opções da classe memoir --
-    article,			       % indica que é um artigo acadêmico
-    11pt,				         % tamanho da fonte
-    oneside,			       % para impressão apenas no recto. Oposto a twoside
-    a4paper,			       % tamanho do papel. 
-    % -- opções da classe abntex2 --
-    %chapter=TITLE,		   % títulos de capítulos convertidos em letras maiúsculas
-    %section=TITLE,		   % títulos de seções convertidos em letras maiúsculas
-    %subsection=TITLE,	 % títulos de subseções convertidos em letras maiúsculas
-    %subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
-    % -- opções do pacote babel --
-    english,		       	 % idioma adicional para hifenização
-    brazil,			      	 % o último idioma é o principal do documento
-    sumario=tradicional
-	]{abntex2}
+  % -- opções da classe memoir --
+  article,			       % indica que é um artigo acadêmico
+  11pt,				         % tamanho da fonte
+  oneside,			       % para impressão apenas no recto. Oposto a twoside
+  a4paper,			       % tamanho do papel. 
+  % -- opções da classe abntex2 --
+  %chapter=TITLE,		   % títulos de capítulos convertidos em letras maiúsculas
+  %section=TITLE,		   % títulos de seções convertidos em letras maiúsculas
+  %subsection=TITLE,	 % títulos de subseções convertidos em letras maiúsculas
+  %subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+  % -- opções do pacote babel --
+  english,		       	 % idioma adicional para hifenização
+  brazil,			      	 % o último idioma é o principal do documento
+  sumario=tradicional
+]{abntex2}
+
 
 % ---
 % Pacotes fundamentais 
@@ -37,13 +38,13 @@
      	%pagebackref=true,
 		pdftitle={\@title}, 
 		pdfauthor={\@author},
-    	pdfsubject={Modelo de artigo científico com abnTeX2},
-	    pdfcreator={LaTeX with abnTeX2},
+    	pdfsubject={Uma Introdução a Haskell},
+	    pdfcreator={MysteRys337},
 		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
 		colorlinks=true,       		% false: boxed links; true: colored links
     	linkcolor=black,          	% color of internal links
     	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
+    	filecolor=magenta,      	% color of file links
 		urlcolor=blue,
 		bookmarksdepth=4
 }
@@ -142,7 +143,7 @@
 
     \chapter{Características mais marcantes da linguagem}
 
-    \cite{memoir}
+    \cite{abntex2-wiki-como-customizar}
 
     \begin{itemize}
       \item Como dito anteriormente, a linguagem só faz utilização de funções e funções dentro de funções. Por isso
