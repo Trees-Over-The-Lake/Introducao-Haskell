@@ -26,6 +26,7 @@
 \usepackage{color}				        % Controle das cores
 \usepackage{graphicx}			        % Inclusão de gráficos
 \usepackage{microtype} 			      % para melhorias de justificação
+\usepackage{listings}
 % ---
 
 % ---
@@ -170,8 +171,13 @@
     \end{itemize}
 
     \chapter{Exemplo(s) de programa(s)}
-    \chapter{Estudo de Caso, sobre o(s) tema(s)}
-    \chapter{Considerações finais}
+
+    \subsection*{Quicksort}
+      Exemplo de Quicksort em C: \newline
+      \lstinputlisting[language=c]{quicksort.c}
+      \citeauthor{beginnersbook} 
+      \chapter{Estudo de Caso, sobre o(s) tema(s)}
+      \chapter{Considerações finais}
 
     \newpage
 
@@ -180,7 +186,28 @@
     \begin{apendicesenv}
 
         \partapendices
-        \chapter{Teste}
+        \chapter{Gustavo Lopes}
+
+        O que eu achei de Haskell? Como um usuário de longa data de linguagens orientadas a objeto, 
+        como Java, C++ e mais recentemente Dart, minha experiência inicial com Haskell foi...
+        um pouco estranha. Fiquei muito curioso e até encucado em ver Haskell executar códigos, que em
+        outras linguagens precisariam ocupar 50 linhas, em apenas 2 ou 3 linhas, como foi o Quicksort.
+
+        Além disso, lendo sua história, achei extremamente fascinante toda a concepção do Haskell,
+        mas fiquei até triste, vendo que é muito difícil encontrar muitas pessoas falando sobre essa linguagem, que nasceu 
+        do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
+
+        Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
+        sua versão para Haskell, chamada WxHaskell.
+
+        \newpage
+
+        \chapter{Thiago}
+
+
+
+
     
     \end{apendicesenv}
 
