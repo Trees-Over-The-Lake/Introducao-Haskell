@@ -1,46 +1,101 @@
 \documentclass[
-	% -- opções da classe memoir --
-	article,			% indica que é um artigo acadêmico
-	11pt,				% tamanho da fonte
-	oneside,			% para impressão apenas no recto. Oposto a twoside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	sumario=tradicional
-	]{abntex2}
+  % -- opções da classe memoir --
+  article,			       % indica que é um artigo acadêmico
+  12pt,				         % tamanho da fonte
+  oneside,			       % para impressão apenas no recto. Oposto a twoside
+  a4paper,			       % tamanho do papel. 
+  % -- opções da classe abntex2 --
+  %chapter=TITLE,		   % títulos de capítulos convertidos em letras maiúsculas
+  %section=TITLE,		   % títulos de seções convertidos em letras maiúsculas
+  %subsection=TITLE,	 % títulos de subseções convertidos em letras maiúsculas
+  %subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+  % -- opções do pacote babel --
+  english,		       	 % idioma adicional para hifenização
+  brazil,			      	 % o último idioma é o principal do documento
+  sumario=tradicional
+]{abntex2}
+
+
 % ---
 % Pacotes fundamentais 
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
-% ---
+\usepackage{lmodern}		        	% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}      		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}   		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}	      	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				        % Controle das cores
+\usepackage{graphicx}			        % Inclusão de gráficos
+\usepackage{microtype} 			      % para melhorias de justificação
+\usepackage{listings}
+
+% \setlength{\cftsubsubsecindent}{0pt}% Remove indent for \subsubsection
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
 \usepackage{lipsum}				% para geração de dummy text
-% ---
-
-% Definindo a formatação do listing de codigo
-\usepackage{listings}
-
+\usepackage{tocloft}
 % ---
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[alf]{abntex2cite}                  % Citações padrão ABNT
+% --- 
+% CONFIGURAÇÕES DE PACOTES
 
+% ---
+% Retirar identação do sumário
+% --- 
+\newcounter{mysection}
+\renewcommand\themysection{\Alph{mysection}}
+
+% Writes the entry in the ToC with the required indentation
+\newcommand\ToToC[1]{%
+  \addcontentsline{toc}{section}   {\hspace*{4em}\appendixname~\themysection\hspace*{1em}#1}
+}
+
+\makeatletter
+\newcommand\mysection{\refstepcounter{mysection}%
+  \@startsection{paragraph}{4}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\normalfont\Large\bfseries}}
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{4em}}%
+\renewcommand*\l@subsection{\@dottedtocline{2}{0em}{4em}}%
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{0em}{4em}}%
+\newcommand*\l@mysection{\@dottedtocline{4}{1em}{1em}}%
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \renewcommand\theparagraph{\Alph{mysection}}
+  \renewcommand\themysection{\@Alph\c@paragraph}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+% ---
+% 
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+% ---
+% Definindo formatação para exibição de código
+% ---
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -63,16 +118,28 @@
     showtabs=false,
     tabsize=2
 }
-
-\lstset{style=mystyle}
-
+\lstset{
+  style=mystyle,
+}
+% ---
+% 
+% ---
+\graphicspath{{../images/}}
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
-
+% ---
+% 
+% ---
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
-
-
+% ---
+% 
+% ---
+% Espaçamento simples
+\SingleSpacing
+% ---
+% Informações de dados para CAPA
+% ---
 \titulo{Uma Introdução a Haskell}
 \autor{Gustavo Lopes Rodrigues \and Lucas Santiago \and Pedro Souza \and Thiago Henriques}
 \local{Belo Horizonte}
@@ -81,19 +148,59 @@
   Pontifícia Universidade Católica Minas Gerais
   }
 \tipotrabalho{Trabalho de LIP}
-
+% ---
+% 
+% ---
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Trabalho de Linguagem de programação em LaTeX},
+	    pdfcreator={GLR, LSO, PS, THN},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{Linguagem de programação}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=black,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% ---
+% Iniciando efetivamente o documento
+% ---
 \begin{document} 
 
+    % Fazer com que as secções sejão subcapitulos
+    \renewcommand{\thesection}{\noindent\arabic{chapter}.\arabic{section}}. 
+    % ---
+    % Selecionando linguagem
+    % ---
     \selectlanguage{brazil}
-
+    % ---
+    % Retira espaço extra obsoleto entre as frases.
+    % ---
     \frenchspacing
-
+    % ---
+    % Imprimir a capa 
+    % ---
     \imprimircapa
-
+    % ---
+    % Imprimir a tabela de conteúdos(Sumário)
+    % ---
+    \pdfbookmark[0]{\contentsname}{toc}
     \tableofcontents*
-
+    \cleardoublepage
+    % ---
+    % PARTE TEXTUAL
+    % ---
     \textual
-
+    % ---
+    % Criar nova página e então iniciar a escrita
+    % ---
+    \newpage
     \chapter{Introdução}
 
     Em 1930, Alonzo Church , matemático estadunidense apresentou o Cálculo Lambda, como parte da investigação dos fundamentos da matemática. O Cálculo Lambda é um sistema que
@@ -105,10 +212,28 @@
     havia um padrão para as linguagens desse paradigma, e quando chegou a segunda metade da década de 80, havia uma necessidade para criar uma única linguagem, que englobasse
     as melhores práticas de projeto, além de implementar as técnicas funcionais que estavam em alta na época.
 
-    Em Setembro de 1987, aconteceu a conferência \emph{Functional Programming Language and Computer Architecture} em Portland - Oregon, para que fosse discutido justamente
-    tais questões.
 
-    Dessa conferência, surgiu as seguintes diretrizes:
+    \newpage
+    \chapter{Histórico sobre a linguagem, com sua cronologia}
+
+    A criação do Haskell se deu 1987, quando Peyton Jones e Paul Hudak fizeram uma reunião no meio da FPCA (Functional  Programming and Computer Architecture Conference)
+    para criar uma linguagem de programação funcional e comum. 
+    
+    Como ponto de partida a equipe decidiu por escolher uma linguagem que já existia como ponto de partida para seu projeto.
+    A linguagem Miranda foi a escolhida, por ter um design robusto e intuitivo, ela atendia a maioria das metas estabelecidas e 
+    além de estar sendo utilizada em sites. 
+
+    Porém após algumas conversas, David Turner (criador da Miranda) não autorizou o uso da Miranda. Isso se deve pelo fato dos objetivos
+    da equipe serem diferentes dos dele, deixando assim um pedido que fizessem uma linguagem diferente.
+
+    Por mais que a Miranda não pudesse ser utilizada, a equipe se inpirou na linguagem e adotou elementos especificos.  
+    Sendo assim, a implementação do Haskell começou do zero, permitindo assim o desenvolvimento mais fluido da linguagem 
+    e a criação de funções únicas.
+    
+    The Yale Meeting foi a primeira reunião presencial que ocorreu logo após a reunião FPCA, no qual foi decidido
+    os principais objetivos que a linguagem proporcionaria, como também a escolha do nome para a nova linguagem. 
+    Segue as metas estabelecidas na reunião:
+
     \begin{itemize}
       \item Ser viável para o ensino, pesquisa e aplicações, incluindo sistema de larga escala;
       \item Ser completamente descritiva via publicação no tocante à sua sintaxe e sua semântica;
@@ -117,18 +242,31 @@
       \item Reduzir a diversidade desnecessária de outras linguagens funcionais.
     \end{itemize}
 
-    Além disso, eles decidiram não começar do zero, e elegeu a linguagem Miranda, como base do projeto, por ser a mais amadurecida e bem projetada entre as demais. E 
-    foi a partir dessa linguagem, que nasceu Haskell.
+    Depois desse evento, outras reuniões se sucederam e sendo assim no dia 01/04/1990, foi publicado primeiro relatório
+    da versão 1.0 do Haskell. Durante os proximos 15 anos, Haskell teve o lançamento de diferentes versões, tranzendo outras
+    funcionalidades para linguagem, entre elas se encontra Haskell'98 e Haskell 2010 que é a versão mais recente de Haskell.  
 
-    \chapter{Histórico sobre a linguagem, com sua cronologia}
+    Dando um pouco de enfasê para o Haskell 2010, as funcionalidades:
+    
+    \begin{itemize}
+      \item Do and If Then Else 
+      \item Hierarchical Modules
+      \item Empty Data Declarations
+      \item Fixity Resolution 
+      \item Foreign Function Interface
+      \item Line Comment Syntax
+      \item Pattern Guards
+      \item Relaxed Dependency Analysis
+      \item Language Pragma
+      \item Remove n+k patterns
+    \end{itemize}
 
-    Como dito anteriormente, Haskell nasceu a partir da necessidade de criar uma linguagem funcional mais padronizada. Seu nome é uma homenagem ao 
-    matemático Haskell Brooks Curry, que contribuiu com teorias fundamentais para o paradigma.
+    \begin{figure}[ht]
+      \includegraphics[width =\textwidth]{timeline.png}
+      \caption{Cronologia do Haskell}
+    \end{figure}
 
-    A primeira versão foi definida em 1 de abril de 1990 e com o passar dos anos, a linguagem foi recebendo atualizações(1.1 em 1991, 1.2 em 1992, 1.3 em 1996 e 1.4 em 1997). 
-    Em janeiro de 1999, foi juntado todos as versões anteriores para fazer o Haskell 98, que especifíca uma versão mínima, estável e portável da linguagem e das bibliotecas para ensino. 
-    A linguagem mesmo assim continuo evoluindo, recebendo novas atualizações em 2003, 2006 e por fim , a última atualização em
-    2010, com o Haskell 2010.
+    \newpage
 
     \chapter{Paradigma a que pertence}
 
@@ -146,6 +284,8 @@
       \item Cálculo Lambda
     \end{itemize}
 
+    \newpage
+
     \chapter{Características mais marcantes da linguagem}
 
     \begin{itemize}
@@ -161,6 +301,8 @@
       uma função como resultado.
     \end{itemize}
 
+    \newpage 
+
     \chapter{Linguagem similares ou confrontantes}
 
     \begin{itemize}
@@ -172,20 +314,29 @@
       \item Elixir 
     \end{itemize}
 
+    \newpage
+
     \chapter{Exemplo(s) de programa(s)}
 
-    \subsection*{Hello World em Haskell}
+    \section{Hello World em Haskell}
       \lstinputlisting[language=haskell]{helloworld.hs}
 
-    \subsection*{Quicksort}
-      Exemplo de Quicksort em C: \newline
+    \section{Quicksort}
+      \subsection{Exemplo de Quicksort em C}
+
+
       \lstinputlisting[language=c]{quicksort.c}
-      Exemplo de Quicksort em Haskell usando compreensão de lista \newline
+      \subsection{Exemplo de Quicksort em Haskell usando compreensão de lista} 
+
       \lstinputlisting[language=haskell]{quicksort_list.hs}      
-      Exemplo de Quicksort em Haskell usando a função filter: \newline
+
+      \newpage
+
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter}
+
       \lstinputlisting[language=haskell]{quicksort_filter.hs}
 
-      \subsection*{Explicação dos algoritmos}
+      \section{Explicação dos algoritmos}
       Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
       em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
       para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
@@ -194,18 +345,65 @@
       foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
       cria uma função recursiva e 
 
-      aSDASDASD ASD ASD ASD AS DAExemplo de Quicksort em Haskell usando a função filter: \newline
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter}
+
       \lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
-      ASDASDAS DASD ASD ASD ASExemplo de Quicksort em Haskell usando a função filter: \newline
+
+      \newpage
+
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter} 
+
       \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
 
+
+    \newpage
+
     \chapter{Estudo de Caso, sobre o(s) tema(s)}
+
+    \newpage
+
     \chapter{Considerações finais}
 
+    \newpage
+
+    \bibliography{abntex2-modelo-references}
     \begin{apendicesenv}
 
         \partapendices
-        \chapter{Teste}
+        \chapter{Gustavo Lopes}
+
+        O que eu achei de Haskell? Como um usuário de longa data de linguagens orientadas a objeto(OOP), 
+        como Java, C++ e mais recentemente Dart, minha experiência inicial com Haskell foi...
+        um pouco estranha. Fiquei muito curioso e até encucado em ver Haskell executar códigos, que em
+        outras linguagens precisariam ocupar 50 linhas, em apenas 2 ou 3 linhas, como foi o Quicksort.
+
+        Além disso, lendo sua história, achei extremamente fascinante toda a concepção do Haskell,
+        mas fiquei até triste, vendo que é muito difícil encontrar muitas pessoas falando sobre essa linguagem, que nasceu 
+        do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
+
+        Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
+        sua versão para Haskell, chamada WxHaskell.
+
+        \begin{figure}[ht]
+          \includegraphics[width =\textwidth]{gebob.png}
+          \caption{GeBoP, um jogo de tabuleiro feito em Haskell, usando WxHaskell}
+        \end{figure}
+
+        \newpage
+        \chapter{Thiago Henriques}
+
+        \newpage 
+
+        \chapter{Lucas Santiago}
+
+        \newpage
+
+        \chapter{Pedro Souza}
+
+
+
+
     
     \end{apendicesenv}
 
