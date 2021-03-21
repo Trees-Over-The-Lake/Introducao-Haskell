@@ -43,6 +43,22 @@
 % --- 
 % CONFIGURAÇÕES DE PACOTES
 
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
 % ---
 % Retirar identação do sumário
 % --- 
@@ -366,10 +382,17 @@
 
     \newpage
 
+    \postextual
+
     \bibliography{abntex2-modelo-references}
     \begin{apendicesenv}
-
+      
         \partapendices
+
+        %Corrigir erro da numeração dos apendices
+        \setcounter{chapter}{0}
+        \renewcommand{\thechapter}{\Alph{chapter}}%
+
         \chapter{Gustavo Lopes}
 
         O que eu achei de Haskell? Como um usuário de longa data de linguagens orientadas a objeto(OOP), 
@@ -391,6 +414,7 @@
         \end{figure}
 
         \newpage
+        
         \chapter{Thiago Henriques}
 
         \newpage 
