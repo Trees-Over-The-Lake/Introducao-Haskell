@@ -43,6 +43,22 @@
 % --- 
 % CONFIGURAÇÕES DE PACOTES
 
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
 % ---
 % Retirar identação do sumário
 % --- 
@@ -330,8 +346,6 @@
 
       \lstinputlisting[language=haskell]{quicksort_list.hs}      
 
-      \newpage
-
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
       \lstinputlisting[language=haskell]{quicksort_filter.hs}
@@ -339,26 +353,25 @@
       \section{Explicação dos algoritmos}
       Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
       em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
-      para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
+      para um quicksort, a lingua mostra-se bem compacta e direta na resolução dos problemas.
 
       No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
-      foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
-      cria uma função recursiva e 
+      foi declarado uma lista vazia para ser retornada caso o quicksort receba uma lista sem valores. A segunda linha
+      cria uma função recursiva, caso tenha valores na lista para serem ordenados.
 
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
       \lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
+      
+      Esse é um modelo traduzido diretamente do exemplo do quicksort em C para Haskell. Modelo resumido usando recursos da linguagem
+      abaixo:
 
-      \newpage
-
-      \subsection{Exemplo de Quicksort em Haskell usando a função filter} 
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter resumido} 
 
       \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
 
-
-    \newpage
-
-    \chapter{Estudo de Caso, sobre o(s) tema(s)}
+      Mesmo resumindo o código a forma imperativa para o quicksort não parece ser uma boa opção, usar o quicksort de forma recursiva
+      dentro do haskell torna o código muito mais simples e intuitivo.
 
     \newpage
 
@@ -366,10 +379,17 @@
 
     \newpage
 
+    \postextual
+
     \bibliography{abntex2-modelo-references}
     \begin{apendicesenv}
-
+      
         \partapendices
+
+        %Corrigir erro da numeração dos apendices
+        \setcounter{chapter}{0}
+        \renewcommand{\thechapter}{\Alph{chapter}}%
+
         \chapter{Gustavo Lopes}
 
         O que eu achei de Haskell? Como um usuário de longa data de linguagens orientadas a objeto(OOP), 
@@ -382,7 +402,7 @@
         do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
 
         Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
-        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform, também possui 
         sua versão para Haskell, chamada WxHaskell.
 
         \begin{figure}[ht]
@@ -391,11 +411,14 @@
         \end{figure}
 
         \newpage
+        
         \chapter{Thiago Henriques}
 
         \newpage 
 
         \chapter{Lucas Santiago}
+
+        Na minha opinião, Haskell se apresenta de uma forma muito 
 
         \newpage
 
