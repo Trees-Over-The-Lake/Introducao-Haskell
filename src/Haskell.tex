@@ -1,6 +1,5 @@
 \documentclass[
   % -- opções da classe memoir --
-  article,			       % indica que é um artigo acadêmico
   12pt,				         % tamanho da fonte
   oneside,			       % para impressão apenas no recto. Oposto a twoside
   a4paper,			       % tamanho do papel. 
@@ -12,7 +11,6 @@
   % -- opções do pacote babel --
   english,		       	 % idioma adicional para hifenização
   brazil,			      	 % o último idioma é o principal do documento
-  sumario=tradicional
 ]{abntex2}
 
 
@@ -28,6 +26,7 @@
 \usepackage{microtype} 			      % para melhorias de justificação
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage{fancyhdr}
 
 % \setlength{\cftsubsubsecindent}{0pt}% Remove indent for \subsubsection
 
@@ -35,7 +34,6 @@
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
 \usepackage{lipsum}				% para geração de dummy text
-\usepackage{tocloft}
 % ---
 % Pacotes de citações
 % ---
@@ -60,39 +58,6 @@
 	\fi}%
 % ---
 
-% ---
-% Retirar identação do sumário
-% --- 
-\newcounter{mysection}
-\renewcommand\themysection{\Alph{mysection}}
-
-% Writes the entry in the ToC with the required indentation
-\newcommand\ToToC[1]{%
-  \addcontentsline{toc}{section}   {\hspace*{4em}\appendixname~\themysection\hspace*{1em}#1}
-}
-
-\makeatletter
-\newcommand\mysection{\refstepcounter{mysection}%
-  \@startsection{paragraph}{4}{\z@}%
-  {-3.5ex \@plus -1ex \@minus -.2ex}%
-  {2.3ex \@plus.2ex}%
-  {\normalfont\Large\bfseries}}
-\renewcommand*\l@section{\@dottedtocline{1}{0em}{4em}}%
-\renewcommand*\l@subsection{\@dottedtocline{2}{0em}{4em}}%
-\renewcommand*\l@subsubsection{\@dottedtocline{3}{0em}{4em}}%
-\newcommand*\l@mysection{\@dottedtocline{4}{1em}{1em}}%
-\renewcommand\appendix{\par
-  \setcounter{section}{0}%
-  \setcounter{subsection}{0}%
-  \renewcommand\theparagraph{\Alph{mysection}}
-  \renewcommand\themysection{\@Alph\c@paragraph}}
-\makeatother
-
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{3}
-% ---
-% 
-% --- 
 
 % ---
 % Configurações do pacote backref
@@ -185,6 +150,9 @@
 		bookmarksdepth=4
 }
 \makeatother
+
+\makeindex
+
 % ---
 % Iniciando efetivamente o documento
 % ---
@@ -218,7 +186,8 @@
     % Criar nova página e então iniciar a escrita
     % ---
     \newpage
-    \chapter{Introdução}
+    \chapter*[Introdução]{Introdução}
+    \addcontentsline{toc}{chapter}{Introdução}
 
     Em 1930, Alonzo Church , matemático estadunidense apresentou o Cálculo Lambda, como parte da investigação dos fundamentos da matemática. O Cálculo Lambda é um sistema que
     estuda funções recursivas computáveis, e foi utilizada como base para as teorias e fundamentos matemáticos por trás do paradigma da Programação Funcional. Ele também
@@ -297,18 +266,76 @@
     \chapter{Paradigma a que pertence}
 
     O paradigma oferece e determina a visão que o programador possui sobre a estruturação
-    e a execução do programa. Um exemplo bem famoso de paradigma é o POO ( Programação orientada a objetos).
-    Já a Programação funcional é um paradigma que descreve uma expressão matemática a ser avaliada,
-    mapeando dos valores de entradas nos valores de retorno, por meio de funções. Em outras palavras: 
-    a programação funcional só funciona em cima de funções.
+    e a execução do programa. Um exemplo bem famoso de paradigma é o POO (Programação orientada a objetos),
+    conhecido por ser o modelo para linguagens como C++ e Java.
 
-    Eis mais algumas características do paradigma
+    Já a Programação funcional em espécifico, é um paradigma que descreve uma expressão matemática a ser avaliada,
+    mapeando dos valores de entradas nos valores de retorno, por meio de funções. Em outras palavras: 
+    a programação funcional é baseado em cima de funções que rodam no topo de outras funções. Programação 
+    funcional está englobada junto ao grupo da Programação descritiva
+
+    Eis mais algumas características deste paradigma
+
+    \section{Dados imutáveis} 
+
+    É possível declarar valores a variáveis, mas não pode mudar o valor dessas 
+    delas durante a compilação. Isso acontece porque, diferente de linguagens imperativas(Como C), onde você
+    atribui um valor e pode mudá-lo em execuções, variáveis em Haskell(por exemplo) possuem tipagem forte, logo 
+    não sofrem efeitos colaterais(\emph{side effects}).
+
+    \section{Funções puras}
+
+    Também presentes em linguagens como JavaScript e Python, Funções puras são aquelas que recebem 
+    um parâmetro \'input\' e sempre vão retornar o mesmo \'input\' sem causar efeitos colatreis
+    ao programa.
+
+    Este tipo de função é muito boa pelos seguintes aspectos
+    
     \begin{itemize}
-      \item Dados imutáveis e são evitados estados. 
-      \item Não existe efeitos colaterais 
-      \item "Funções puras" (sem efeitos colaterais)
-      \item Cálculo Lambda
+      \item facilita execução de códigos em paralelo, pois não impactam outras funcionalidades que estão em atuação
+      \item Maior facilidade em criar cache, já que os mesmos parâmetros são sempre esperados.
+    \end{itemize} 
+
+    \newpage
+
+    \section{Cálculo Lambda}
+    
+    Como mencionado anteriormente, o Cálculo Lambda está presente na programação funcional, e em Haskell não é diferente.
+    Em Haskell, é possível utilizar as chamadas \emph{Expressões lambda} que são funções anônimas(sem nome), formadas por 
+    uma sequência de padrões:
+
+    \begin{itemize}
+      \item Argumentos da função 
+      \item Corpo
     \end{itemize}
+
+    \begin{gather*}
+      \text{Função anônima para calcular o dobro de x} \\ x \rightarrow x + x 
+    \end{gather*}
+
+    \section{Análise crítica} 
+
+    As linguas que seguem o paradigma funcional se caracterizam em criar 
+    funcionalidade dentro de estruturas de fácil compreensão e definição. Isso ajuda a manter 
+    a fiabilidade, e leitura do código, principalmente quando integrado a forte tipagem. Além disso,
+    táis códigos se caracterizam pelo alto nível de abstração, principalmente ao utilizar as funções,
+    já que isso permite supressão de detalhes da programação, e garante uma menor probabilidade 
+    de erros.
+
+    Em contraste, tais ideias podem se tornarem complicadas, quando utilizadas dentro de contextos
+    onde é necessário de muitas variáveis(Exemplo: Banco de Dados). Além disso, por conta que as funções 
+    possuem a característica de serem recursivas por padrão, elas tendem a ser mais ineficientes no sentido
+    computacionalmente, quando comparado as linguagens imperativas. Ainda nesse ponto, funções recursivas podem gerar maior uso de memória.
+
+    %% Referencias dessa parte
+
+    \nocite{haskellslides}
+    \nocite{funcoespura}
+    \nocite{funcoespura2}
+    \nocite{haskellwikipedia}
+    \nocite{abntex2-wiki-como-customizar}
+
+    %%
 
     \newpage
 
@@ -429,7 +456,7 @@
       de dados, verificação monomórfica e verificação polimórfica.
     \end{itemize}
 
-    \newpage 
+    \newpage
 
     \chapter{Linguagem similares ou confrontantes}
 
@@ -446,17 +473,20 @@
 
     \chapter{Exemplo(s) de programa(s)}
 
-    \section{Hello World em Haskell}
+      \setcounter{section}{0}
+
+      \section{Hello World em Haskell}
       \lstinputlisting[language=haskell]{helloworld.hs}
 
-    \section{Quicksort}
+      \section{Quicksort}
       \subsection{Exemplo de Quicksort em C}
-
 
       \lstinputlisting[language=c]{quicksort.c}
       \subsection{Exemplo de Quicksort em Haskell usando compreensão de lista} 
 
       \lstinputlisting[language=haskell]{quicksort_list.hs}      
+
+      \newpage
 
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
@@ -465,29 +495,30 @@
       \section{Explicação dos algoritmos}
       Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
       em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
-      para um quicksort, a lingua mostra-se bem compacta e direta na resolução dos problemas.
+      para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
 
       No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
-      foi declarado uma lista vazia para ser retornada caso o quicksort receba uma lista sem valores. A segunda linha
-      cria uma função recursiva, caso tenha valores na lista para serem ordenados.
+      foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
+      cria uma função recursiva e 
 
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
       \lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
-      
-      Esse é um modelo traduzido diretamente do exemplo do quicksort em C para Haskell. Modelo resumido usando recursos da linguagem
-      abaixo:
 
-      \subsection{Exemplo de Quicksort em Haskell usando a função filter resumido} 
+      \newpage
 
-      \lstinputlisting[language=haskell]{quicksort_c2haskellresumido.hs}
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter} 
 
-      Mesmo resumindo o código a forma imperativa para o quicksort não parece ser uma boa opção, usar o quicksort de forma recursiva
-      dentro do Haskell torna o código muito mais simples e intuitivo.
+      \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
+
+      \nocite{beginnersbook}
 
     \newpage
 
-    \chapter{Considerações finais}
+    \phantompart
+
+    \chapter*[Considerações finais]{Considerações finais}
+    \addcontentsline{toc}{chapter}{Considerações finais}
 
     Após trabalhar nessa linguagem por quase um mês, ficou claro para toda a equipe que Haskell é uma linguagem diferenciada. Possui
     uma história que foi essencial para sua formação, sem esquecer, é claro, que foi uma língua desenvolvida de forma comunitária.
@@ -508,7 +539,6 @@
     várias empresas ainda o adotam por entenderem a importância de seu uso, feito para cálculos científicos e precisos.
     Ainda dentro do contexto de programação funcional e uso de cálculos lambda, Haskell ainda é uma, se não a melhor,
     língua para ser utilizado.
-
 
     \newpage
 
@@ -535,7 +565,7 @@
         do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
 
         Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
-        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform, também possui 
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
         sua versão para Haskell, chamada WxHaskell.
 
         \begin{figure}[ht]
@@ -544,7 +574,7 @@
         \end{figure}
 
         \newpage
-        
+
         \chapter{Thiago Henriques}
         
         Bom, como posso expressar o que eu senti aprendendo sobre essa nova linguagem? Eu gosto muito das linguagens de alto nível, principalmente Python,
@@ -562,7 +592,8 @@
         o comando do Latex.
         
         \begin{figure}[ht]
-          \includegraphics[width =\textwidth]{detexify.png}
+          \centering
+          \includegraphics[scale=0.8]{detexify.png}
           \caption{Interface do Detexify}
         \end{figure}
 
@@ -616,11 +647,16 @@
         até a segunda página do google em alguma pesquisa?
     
         \begin{figure}[ht]
-            \includegraphics[scale=0.6]{Haskellgoogle.png}
+            \centering 
+            \includegraphics[scale=0.3]{Haskellgoogle.png}
             \caption{Haskell, linguagem de programação apenas no último item da segunda página do google}
         \end{figure}
-    
+
     \end{apendicesenv}
+
+    \phantompart
+
+    \printindex
 
 \end{document}
 

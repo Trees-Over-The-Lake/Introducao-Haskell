@@ -10,8 +10,9 @@
 
 \definecolor{mypurple}{RGB}{75, 0, 130} % changed this
 \definecolor{mypurple2}{RGB}{44, 0, 73} % changed this
-\definecolor{mygray}{RGB}{206, 206, 206} % changed this
+\definecolor{mygray}{RGB}{250, 242, 250} % changed this
 \definecolor{myblue}{RGB}{0, 0, 139} % changed this
+\definecolor{baguete}{RGB}{255, 252, 255} % changed this
 
 \setbeamercolor{normal text}{fg=black}
 \setbeamercolor{alerted text}{fg=red}
@@ -23,6 +24,26 @@
 \setbeamercolor{block title}{bg=mypurple2, fg=white}		%Cor do título
 \setbeamercolor{block body}{bg=mygray, fg=darkgray}	%Cor do texto (bg= fundo; fg=texto)
 \setbeamercolor{structure}{fg=mypurple}
+
+\setbeamercolor{background canvas}{bg=baguete}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Trabalho de Linguagem de programação em LaTeX},
+	    pdfcreator={GLR, LSO, PS, THN},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{Linguagem de programação}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=black,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
 
 % ---
 % PACOTES
@@ -62,7 +83,6 @@
 
     \end{frame}
 
-    % ----------------- NOVO SLIDE --------------------------------
     %TABELA DE CONTEÚDO
 
     \AtBeginSection[]
@@ -82,6 +102,8 @@
 
     \end{frame}
 
+    % ----------------- NOVA PARTE --------------------------------
+
     % ----------------- NOVO SLIDE --------------------------------
     \section{Histórico sobre a linguagem}
     \begin{frame}
@@ -91,13 +113,127 @@
 
     \end{frame}
 
+    % ----------------- NOVA PARTE --------------------------------
+
     % ----------------- NOVO SLIDE --------------------------------
     \section{Paradigma}
 
     \begin{frame}
-      \frametitle{ABNT}
-      \framesubtitle{Normas para trabalhos acadêmicos}
+
+      \frametitle{Paradigma}
+      \framesubtitle{Definição}
+
+      \begin{block}{O que é um 'Paradigma'?}
+        Um Paradigma oferece e determina a visão que o programador possui sobre a estruturação
+        e a execução do programa.
+       \end{block} \pause 
+
+       Exemplos:
+
+       \begin{itemize}
+         \item Orientada a Objeto (POO)
+         \item Procedural
+         \item Lógica de Programação
+       \end{itemize}
+
     \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \begin{frame}
+      \frametitle{Paradigma}
+      \framesubtitle{Imperativo \emph{Vs} Declarativo}
+
+      \pause
+
+      \begin{columns}
+        \column{0.5\textwidth}
+        \textbf{Imperativo} 
+
+        \begin{itemize}
+          \item Ações ou comandos que mudam o estado de um programa 
+          \item "Faça isso, depois isso, depois aquilo..." \pause
+        \end{itemize}
+
+        \column{0.5\textwidth}
+
+        \textbf{Declarativo} 
+        \begin{itemize}
+          \item Modelagem de um problema 
+          \item Não há qualquer tipo de descrição de procedimentos
+        \end{itemize}
+
+      \end{columns}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \begin{frame}
+      \frametitle{Paradigma Funcional}
+
+      \begin{block}{Definição}
+        Paradigma que descreve uma expressão matemática a ser avaliada,
+        mapeando dos valores de entradas nos valores de retorno, por meio de funções.
+      \end{block} \pause 
+
+    \begin{figure}
+      \includegraphics[scale=0.7]{ilustrativa.png}
+      \caption{\centering ilustração da entrada de dados e saída de dados, Disponível em \url{http://www.inf.ufes.br/~vitorsouza/archive/2020/wp-content/uploads/teaching-lp-20132-seminario-haskell.pdf}}
+    \end{figure}
+       
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \begin{frame}
+      \frametitle{Paradigma Funcional}
+      \framesubtitle{Características}
+
+      \begin{block}{Dados imutáveis}
+        Variáveis com tipagem forte, que são definidas e nunca mudam durante
+        execução
+      \end{block} \pause 
+
+      \begin{block}{Funções puras}
+        Recebem um parâmetro(input) e sempre vão retornar o mesmo, sem causar efeitos colaterais.
+      \end{block} \pause 
+
+      \begin{block}{Cálculo Lambda(Expressão Lambda)}
+        Funões anônimas formadas por uma sequência de padrões
+      \end{block} 
+       
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \begin{frame}
+      \frametitle{Paradigma Funcional}
+      \framesubtitle{Análise crítica}
+
+      \pause
+
+      \textbf{Vantagens} 
+      \begin{itemize}
+        \item Estruturas pequenas e de fácil compreensão \pause 
+        \item Alto nível de abstração \pause 
+      \end{itemize}
+
+      \textbf{Desvantagens} 
+      \begin{itemize}
+        \item Difícil de se usar em contexto com muitas variáveis
+        \\ Exemplo: Banco de Dados \pause  
+        \item Ineficiência computacional 
+      \end{itemize}
+       
+    \end{frame}
+
+    %% Referencias dessa parte
+
+    \nocite{haskellslides}
+    \nocite{funcoespura}
+    \nocite{funcoespura2}
+    \nocite{haskellwikipedia}
+    \nocite{paradigmas}
+
+    %%
+
+    % ----------------- NOVA PARTE --------------------------------
 
     % ----------------- NOVO SLIDE --------------------------------
     \section{Características mais marcantes}
@@ -107,6 +243,8 @@
       \framesubtitle{Usando a suíte abnTeX2}
     \end{frame}
 
+    % ----------------- NOVA PARTE --------------------------------
+
     % ----------------- NOVO SLIDE --------------------------------
     \section{Linguagem similares}
 
@@ -114,6 +252,8 @@
       \frametitle{abnTeX2}
       \framesubtitle{Usando a suíte abnTeX2}
     \end{frame}
+
+    % ----------------- NOVA PARTE --------------------------------
 
     % ----------------- NOVO SLIDE --------------------------------
     \section{Exemplo(s) de programa(s)}
