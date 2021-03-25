@@ -27,6 +27,7 @@
 \usepackage{graphicx}			        % Inclusão de gráficos
 \usepackage{microtype} 			      % para melhorias de justificação
 \usepackage{listings}
+\usepackage{amsmath}
 
 % \setlength{\cftsubsubsecindent}{0pt}% Remove indent for \subsubsection
 
@@ -327,45 +328,84 @@
     está definido nas funções que são criadas, porém, existem outros fatores importantes a serem observados.
     Nas primeiras linhas do programa são descritos os módulos que serão utilizados pelo mesmo. Para utilizar um módulo dentro de um programa basta colocar a seguinte declaração:
 
-    \begin{figure}[ht]
-      \includegraphics[width =\textwidth]{chamarmodulo.png}
-      \caption{Importando módulos}
-    \end{figure}
+    \begin{gather*}
+      import<nomeDoMódulo> as <nomeEspecifico> \\
+      \text{Como importar módulos}
+    \end{gather*}
 
     Já a criação de módulos é diferente, o cabeçalho deve ser escrito da seguinte forma:
 
-    \begin{figure}[ht]
-      \includegraphics[width =\textwidth]{modulos.png}
-      \caption{Cabeçalho de um Módulo}
-    \end{figure}
+    \begin{gather*}
+      module<nomeDoMódulo>where \\
+      <import<nomeDoMódulo> \\
+      <declaraçãoDasFunçõesAseremExportadas> \\
+      <declaraçãoDasVariáveisAseremExportadas> \\
+      corpoDoMódulo \\
+      \text{Cabeçalho de um módulo}
+    \end{gather*}
+
+    \newpage 
 
     Podemos importar outros módulos dentro de um módulo que estamos criando. O corpo do módulo é onde estão as funções criadas para serem utilizadas. Mesmo podendo haver vários módulos
     dentro de um mesmo arquivo, não é recomendado.
     Dentro da linguagem Haskell temos vários tipos de dados primitivos, operadores lógicos e e alguns caracteres especiais. Quanto aos operadores lógicos, os mais comuns são:
     \&\&, || e not. Para os tipos de dados primitivos, temos: Bool, Int, Char, String, Float e Double - tipos comuns da maioria das linguagens de programação. 
     Além dos operadores lógicos, Haskell proporciona os operadores aritméticos:
-    
-    \begin{figure}[ht]
-      \includegraphics[width =\textwidth]{operadores_logicos.png}
+
+    \begin{table}[ht]
+      \centering
+      \begin{tabular}{|c | c |}
+        \hline 
+        + & Soma \\
+        \hline 
+        - & Subtração \\
+        \hline 
+        * & Multiplicação \\ 
+        \hline 
+        ${\wedge}$ & Potência \\ 
+        \hline 
+        div & Divisão inteira \\
+        \hline 
+        mod & Resto de divisão \\ 
+        \hline 
+        abs & Valor absoluto de um inteiro \\
+        \hline 
+        negate & Troca o sinal do valor \\
+        \hline 
+      \end{tabular}
       \caption{Operadores aritméticos}
-    \end{figure}
+    \end{table}
 
     Para finalizar os tipos primitivos em Haskell, os caracteres especiais possuem as seguintes representações:
     
-    \begin{figure}[ht]
-      \includegraphics[width =\textwidth]{caracteres.png}
+    \begin{table}[ht]
+      \centering
+      \begin{tabular}{|c | c |}
+        \hline 
+        '\symbol{92}t' & Marca de tabulação \\
+        \hline 
+        '\symbol{92}n' & Nova linhas \\
+        \hline 
+        '\symbol{92}\symbol{92}' & Barra invertida \\ 
+        \hline 
+        '\symbol{92}'' & Aspas simples \\ 
+        \hline 
+        '\symbol{92}''' & Aspas duplas \\
+        \hline 
+      \end{tabular}
       \caption{Caracteres especiais}
-    \end{figure}
+    \end{table}
 
     Em Haskell, é possível criar tipos abstratos de dados, como tuplas e listas. Em uma tupla, podemos inserir um número determinado de dados com tipos predefinidos, já em uma lista os dados são
     todos do mesmo tipo (possibilitando a criação de uma lista que contenha tuplas, desde que os tipos de dados dentro das tuplas sejam iguais entre si). Apesar de serem tipos de dados abstratos,
     tuplas e listas não são as únicas dentro da linguagem, Haskell nos permite criar classes dentro dele.
     As classes em Haskell, são semelhantes às classes na orientação de objetos, com algumas implementações diferentes.
     Para começar uma classe, temos uma expressão como mostrada abaixo:
-    \begin{figure}[ht]
-      \includegraphics[width=\textwidth]{classes.png}
-      \caption{Definindo uma classe}
-    \end{figure}
+   
+    \begin{gather*}
+      class<nomeDaClasse><tipoDeEntrada>where<assinaturaDaClasse> \\
+      \text{Definindo uma classe}
+    \end{gather*}
 
     O nome da classe é um identificador e o tipo de entrada é para representar o tipo de dado, ou uma variável que atuaria como variável de tipo - possibilitando que a classe aceite qualquer tipo
     de dado na entrada. Sendo assim, o tipo de entrada pode ser tanto um inteiro, um char ou até uma string, dependendo da intenção do usuário.
