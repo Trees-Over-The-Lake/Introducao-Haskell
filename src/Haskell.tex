@@ -153,20 +153,6 @@
 
 \makeindex
 
-\fancypagestyle{plain}{
-    \lhead{}
-    \fancyhead[R]{\thepage}
-    \fancyhead[L]{}
-    \renewcommand{\headrulewidth}{0pt}
-    \fancyfoot{}
-}
-
-\pagestyle{fancy}
-\fancyhead[R]{\thepage}
-\fancyhead[L]{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot{}
-
 % ---
 % Iniciando efetivamente o documento
 % ---
@@ -263,7 +249,7 @@
 
     \begin{figure}[ht]
       \includegraphics[width =\textwidth]{timeline.png}
-      \caption{Cronologia do Haskell}
+      \caption{Cronologia do Haskell. Disponível em: \url{https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf}}
     \end{figure}
 
     
@@ -276,11 +262,12 @@
     e a execução do programa. Um exemplo bem famoso de paradigma é o POO (Programação orientada a objetos),
     conhecido por ser o modelo para linguagens como C++ e Java.
 
-    Já a Programação funcional é um paradigma que descreve uma expressão matemática a ser avaliada,
+    Já a Programação funcional em espécifico, é um paradigma que descreve uma expressão matemática a ser avaliada,
     mapeando dos valores de entradas nos valores de retorno, por meio de funções. Em outras palavras: 
-    a programação funcional só funciona em cima de funções.
+    a programação funcional é baseado em cima de funções que rodam no topo de outras funções. Programação 
+    funcional está englobada junto ao grupo da Programação descritiva
 
-    Eis mais algumas características do paradigma
+    Eis mais algumas características deste paradigma
 
     \section{Dados imutáveis} 
 
@@ -332,6 +319,16 @@
     onde é necessário de muitas variáveis(Exemplo: Banco de Dados). Além disso, por conta que as funções 
     possuem a característica de serem recursivas por padrão, elas tendem a ser mais ineficientes no sentido
     computacionalmente, quando comparado as linguagens imperativas. Ainda nesse ponto, funções recursivas podem gerar maior uso de memória.
+
+    %% Referencias dessa parte
+
+    \nocite{haskellslides}
+    \nocite{funcoespura}
+    \nocite{funcoespura2}
+    \nocite{haskellwikipedia}
+    \nocite{abntex2-wiki-como-customizar}
+
+    %%
 
     \newpage
 
@@ -404,6 +401,8 @@
       \subsection{Exemplo de Quicksort em Haskell usando a função filter} 
 
       \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
+
+      \nocite{beginnersbook}
 
     \newpage
 
