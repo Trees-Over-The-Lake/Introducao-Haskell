@@ -355,8 +355,6 @@
 
       \lstinputlisting[language=haskell]{quicksort_list.hs}      
 
-      \newpage
-
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
       \lstinputlisting[language=haskell]{quicksort_filter.hs}
@@ -364,25 +362,22 @@
       \section{Explicação dos algoritmos}
       Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
       em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
-      para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
+      para um quicksort, a lingua mostra-se bem compacta e direta na resolução dos problemas.
 
       No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
-      foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
-      cria uma função recursiva e 
+      foi declarado uma lista vazia para ser retornada caso o quicksort receba uma lista sem valores. A segunda linha
+      cria uma função recursiva, caso tenha valores na lista para serem ordenados.
 
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
       \lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
+      
+      Esse é um modelo traduzido diretamente do exemplo do quicksort em C para Haskell. Modelo resumido usando recursos da linguagem
+      abaixo:
 
-      \newpage
-
-      \subsection{Exemplo de Quicksort em Haskell usando a função filter} 
+      \subsection{Exemplo de Quicksort em Haskell usando a função filter resumido} 
 
       \lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
-
-    \newpage
-
-    \chapter{Estudo de Caso, sobre o(s) tema(s)}
 
     \newpage
 
@@ -413,7 +408,7 @@
         do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
 
         Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
-        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
+        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform, também possui 
         sua versão para Haskell, chamada WxHaskell.
 
         \begin{figure}[ht]
@@ -447,6 +442,34 @@
         \newpage 
 
         \chapter{Lucas Santiago}
+
+        Na minha opinião, Haskell se apresenta de uma forma muito diferente da maioria da outras línguas. 
+        Parafraseando Fábio Akita: Cada língua de programação não é mais do que uma ferramenta
+        para resolver um problema. 
+
+        \begin{figure}[ht]
+          \includegraphics[width =\textwidth]{fabio_akita_lingua.png}
+          \caption{\href{https://www.youtube.com/watch?v=p9-WuJbVHHc}{Fábio Akita explicando que linguas de programação são apenas feitas para resolver problemas!}}
+        \end{figure}
+
+        Os problemas que Haskell se propôs a resolver são cálculos matemáticos
+        funcionais. O paradigma funcional dessa língua torna ela bem resistente a efeitos colaterais. Além de ser uma língua
+        \emph{cross-platform}, extremamente importante para todas aquelas pessoas que precisem de uma língua que funcione
+        em qualquer sistema operacional. 
+
+        Como um programador de C/C++ e Python, vejo que Haskell está em um nível intermediário entre essas línguas.
+        É interessante ver uma língua de alto nível com tipagem estática, torna o código bem estável - chances baixas de 
+        resultar em erros -, tipagem é fundamental quando se quer garantir precisão de valores e tipos nos cálculos.
+
+        Concluindo, não foi tão intuitivo aprender Haskell, ele possui várias propriedades que não existem em nenhuma das línguas
+        que conhecia. Entretando, isso foi extremamente positivo para mim, aprendi várias coisas novas. Abaixo há
+        mais um vídeo do Fábio Akita, dessa vez citando que nem sempre é fácil aprender algo novo. Em programação,
+        quando você aprende da forma correta, várias novas possibilidades de resolução de problemas começam a aparecer.
+
+        \begin{figure}[ht]
+          \includegraphics[width =\textwidth]{fabio_akita_programar_eh_dificil.png}
+          \caption{\href{https://www.youtube.com/watch?v=V7oUDL7E1g4}{Fábio Akita explicando que programação nem sempre é fácil.}}
+        \end{figure}
 
         \newpage
 

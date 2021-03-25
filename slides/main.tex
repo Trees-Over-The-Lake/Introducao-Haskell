@@ -1,0 +1,148 @@
+\documentclass[aspectratio=169]{beamer}	 	
+
+\usetheme{Goettingen}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}			% para fontes matemáticas
+% Enconte mais temas e cores em http://www.hartwork.org/beamer-theme-matrix/ 
+% Veja também http://deic.uab.es/~iblanes/beamer_gallery/index.html
+
+% Customizações de Cores: fg significa cor do texto e bg é cor do fundo
+
+\definecolor{mypurple}{RGB}{75, 0, 130} % changed this
+\definecolor{mypurple2}{RGB}{44, 0, 73} % changed this
+\definecolor{mygray}{RGB}{206, 206, 206} % changed this
+\definecolor{myblue}{RGB}{0, 0, 139} % changed this
+
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{author}{fg=blue}
+\setbeamercolor{institute}{fg=blue}
+\setbeamercolor{date}{fg=myblue}
+\setbeamercolor{frametitle}{fg=mypurple}
+\setbeamercolor{framesubtitle}{fg=black}
+\setbeamercolor{block title}{bg=mypurple2, fg=white}		%Cor do título
+\setbeamercolor{block body}{bg=mygray, fg=darkgray}	%Cor do texto (bg= fundo; fg=texto)
+\setbeamercolor{structure}{fg=mypurple}
+
+% ---
+% PACOTES
+% ---
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[brazil]{babel}		% Idioma do documento
+\usepackage{color}			      % Controle das cores
+\usepackage[T1]{fontenc}		  % Selecao de codigos de fonte.
+\usepackage{graphicx}			    % Inclusão de gráficos
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{txfonts}			    % Fontes virtuais
+% ---
+
+% --- Informações do documento ---
+\title{Apresentando Haskell}
+\author{Gustavo Lopes \and Lucas Santiago \and Pedro Souza \and Thiago Henriques }
+\institute{Pontifícia Universidade Católica de Minas Gerais}
+\date{26 de Março de 2021}
+% ---
+
+% ----------------- INÍCIO DO DOCUMENTO --------------------------------------
+\begin{document}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \begin{frame}
+
+    \begin{minipage}{1\linewidth}
+      \centering
+      \begin{tabular}{cc}
+        \begin{tabular}{c}
+          \includegraphics[width=3.0cm]{Haskell.png}
+        \end{tabular}
+      \end{tabular}
+    \end{minipage}
+
+    \titlepage
+
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    %TABELA DE CONTEÚDO
+
+    \AtBeginSection[]
+    {
+    \begin{frame}
+      \frametitle{Conteúdo}
+    \tableofcontents[currentsection]
+    \end{frame}
+    }
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Introdução}
+
+    \begin{frame}{Introdução}
+
+    
+
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Histórico sobre a linguagem}
+    \begin{frame}
+
+      \frametitle{Histórico sobre a linguagem}
+      \framesubtitle{com sua cronologia}
+
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Paradigma}
+
+    \begin{frame}
+      \frametitle{ABNT}
+      \framesubtitle{Normas para trabalhos acadêmicos}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Características mais marcantes}
+
+    \begin{frame}
+      \frametitle{abnTeX2}
+      \framesubtitle{Usando a suíte abnTeX2}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Linguagem similares}
+
+    \begin{frame}
+      \frametitle{abnTeX2}
+      \framesubtitle{Usando a suíte abnTeX2}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Exemplo(s) de programa(s)}
+
+    \begin{frame}
+      \frametitle{abnTeX2}
+      \framesubtitle{Usando a suíte abnTeX2}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Considerações finais}
+
+    \begin{frame}
+      \frametitle{abnTeX2}
+      \framesubtitle{Usando a suíte abnTeX2}
+    \end{frame}
+
+    % ----------------- NOVO SLIDE --------------------------------
+    \section{Referências}
+
+    % --- O comando \allowframebreaks ---
+    % Se o conteúdo não se encaixa em um quadro, a opção allowframebreaks instrui 
+    % beamer para quebrá-lo automaticamente entre dois ou mais quadros,
+    % mantendo o frametitle do primeiro quadro (dado como argumento) e acrescentando 
+    % um número romano ou algo parecido na continuação.
+
+    \begin{frame}[allowframebreaks]{Referências}
+      \bibliography{abntex2-modelo-references}
+    \end{frame}
+
+% ----------------- FIM DO DOCUMENTO -----------------------------------------
+\end{document}
