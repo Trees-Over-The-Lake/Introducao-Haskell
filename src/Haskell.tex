@@ -189,16 +189,16 @@
     \chapter*[Introdução]{Introdução}
     \addcontentsline{toc}{chapter}{Introdução}
 
-    Em 1930, Alonzo Church , matemático estadunidense apresentou o Cálculo Lambda, como parte da investigação dos fundamentos da matemática. O Cálculo Lambda é um sistema que
-    estuda funções recursivas computáveis, e foi utilizada como base para as teorias e fundamentos matemáticos por trás do paradigma da Programação Funcional. Ele também
+    Em 1930, Alonzo Church, matemático estadunidense apresentou o Cálculo Lambda, como parte da investigação dos fundamentos da matemática. O Cálculo Lambda é um sistema que
+    estuda funções recursivas computáveis e foi utilizada como base para as teorias e fundamentos matemáticos por trás do paradigma da Programação Funcional. Ele também
     pode ser considerado a primeira linguagem programação funcional, todavia, não foi projetada para ser executada em computadores, sendo apenas um modelo que descreve relações entre funções
     simples, permitindo criar funções mais complexas.
 
     Com o passar dos anos, varias linguagens funcionais foram criadas, sendo alguns exemplos a linguagem LISP em 1955 e a ML no final da década de 70. Porém, não
-    havia um padrão para as linguagens desse paradigma, e quando chegou a segunda metade da década de 80, havia uma necessidade para criar uma única linguagem, que englobasse
+    havia um padrão para as linguagens desse paradigma, e quando chegou a segunda metade da década de 80, havia uma necessidade de criar uma única linguagem, que englobasse
     as melhores práticas de projeto, além de implementar as técnicas funcionais que estavam em alta na época.
 
-    Nesse contexto Haskell foi criado em 1987, por Peyton Jones e Paul Hudak. Sendo assim a The Yale Meeting foi a primeira reunião presencial , no qual foi decidido
+    Nesse contexto Haskell foi criado em 1987, por Peyton Jones e Paul Hudak. Sendo assim a The Yale Meeting foi a primeira reunião presencial, no qual foi decidido
     os principais objetivos que a linguagem proporcionaria, como também a escolha do nome. 
     Segue as metas estabelecidas na reunião:
 
@@ -218,7 +218,7 @@
 
     Depois desse evento, outras reuniões se sucederam e sendo assim no dia 01/04/1990, foi publicado primeiro relatório
     da versão 1.0 do Haskell. Durante os proximos 15 anos, Haskell teve o lançamento de diferentes versões, tranzendo outras
-    funcionalidades para linguagem, entre elas se encontra Haskell'98 e Haskell 2010 que é a versão mais recente de Haskell.  
+    funcionalidades para linguagem, entre elas se encontra Haskell'98 e Haskell 2010 que é sua versão mais recente.  
 
     O relatório da versão do Haskell'98 foi lançado em fevereiro de 1999. Ela surgiu no intuito de estabeler uma versão mais estável, 
     para ser possível realizar a documentação mais profunda da lingua em livros, já que o Haskell estava evoluindo muito rápido e ganhando 
@@ -242,18 +242,18 @@
     \end{itemize}
 
     Atualmente existem 3930 programadores com contas registradas que utilizam Haskell, sendo que 2566
-    dessas contas são publicas e 1364 privadas. Por causa do número de programadores existem muitas 
-    oportunidades nessa área, fazendo os empregos terem um sálario médio de \$80K à \$160K.
+    dessas contas são públicas e 1364 são privadas. Por causa do número de programadores, existem muitas 
+    oportunidades nessa área, fazendo os empregos terem um sálario médio de \$80.000 à \$160.000.
 
-    Por mais que Haskell não seja tão utilizado como antes, muitos aplicações foram feitas com a linguagem. 
+    Por mais que Haskell não seja tão utilizado como antes, muitas aplicações foram feitas com a linguagem. 
     Algumas aplicações são:
 
     \begin{itemize}
-      \item A biblioteca open-source Semantic, implementada pelo GitHub, foi puramente escrito em Haskell.
-      \item O Facebook implementa programas anti spam que são escritos e Haskell e são de código aberto.
-      \item O Snap e Yesod, ambos frameworks para aplicações na web, foram feitos para suportar Haskell.
-      \item O Linspire, sistema operacional comercial, tem Haskell como linguagem escolhida para o desenvolvimento das ferramentas no sistema.
-      \item Xmonad, totalmente escrito em Haskell, é um gerenciador de janela para o sistema X Window System
+      \item A biblioteca open-source Semantic, implementada pelo GitHub, foi puramente escrito em Haskell;
+      \item O Facebook implementa programas anti-spam que são escritos em Haskell e são de código aberto;
+      \item O Snap e Yesod, ambos frameworks para aplicações na web, foram feitos para suportar Haskell;
+      \item O Linspire, sistema operacional comercial, tem Haskell como linguagem escolhida para o desenvolvimento das aplicações do sistema;
+      \item Xmonad, totalmente escrito em Haskell, é um gerenciador de janela para o sistema X Window System.
     \end{itemize}
 
     \begin{figure}[ht]
@@ -274,16 +274,16 @@
     e a execução do programa. Um exemplo bem famoso de paradigma é o POO (Programação orientada a objetos),
     conhecido por ser o modelo para linguagens como C++ e Java.
 
-    Já a Programação funcional em espécifico, é um paradigma que descreve uma expressão matemática a ser avaliada,
+    A Programação funcional é um paradigma que descreve uma expressão matemática a ser avaliada,
     mapeando dos valores de entradas nos valores de retorno, por meio de funções. Em outras palavras: 
     a programação funcional é baseado em cima de funções que rodam no topo de outras funções. Programação 
-    funcional está englobada junto ao grupo da Programação descritiva
+    funcional está englobada junto ao grupo da Programação descritiva.
 
-    Eis mais algumas características deste paradigma
+    Eis mais algumas características deste paradigma:
 
     \section{Dados imutáveis} 
 
-    É possível declarar valores a variáveis, mas não pode mudar o valor dessas 
+    É possível declarar valores a variáveis, mas não pode mudar o valor 
     delas durante a compilação. Isso acontece porque, diferente de linguagens imperativas(Como C), onde você
     atribui um valor e pode mudá-lo em execuções, variáveis em Haskell(por exemplo) possuem tipagem forte, logo 
     não sofrem efeitos colaterais(\emph{side effects}).
@@ -291,13 +291,13 @@
     \section{Funções puras}
 
     Também presentes em linguagens como JavaScript e Python, Funções puras são aquelas que recebem 
-    um parâmetro \'input\' e sempre vão retornar o mesmo \'input\' sem causar efeitos colatreis
+    um parâmetro \emph{input} e sempre vão retornar o mesmo \emph{input} sem causar efeitos colatreis
     ao programa.
 
-    Este tipo de função é muito boa pelos seguintes aspectos
+    Esse tipo de função é positiva pelos seguintes aspectos:
     
     \begin{itemize}
-      \item facilita execução de códigos em paralelo, pois não impactam outras funcionalidades que estão em atuação
+      \item facilita execução de códigos em paralelo, pois não impactam outras funcionalidades que estão em atuação;
       \item Maior facilidade em criar cache, já que os mesmos parâmetros são sempre esperados.
     \end{itemize} 
 
@@ -306,11 +306,11 @@
     \section{Cálculo Lambda}
     
     Como mencionado anteriormente, o Cálculo Lambda está presente na programação funcional, e em Haskell não é diferente.
-    Em Haskell, é possível utilizar as chamadas \emph{Expressões lambda} que são funções anônimas(sem nome), formadas por 
+    Nessa lingua, é possível utilizar as chamadas \emph{Expressões lambda} que são funções anônimas(sem nome), formadas por 
     uma sequência de padrões:
 
     \begin{itemize}
-      \item Argumentos da função 
+      \item Argumentos da função
       \item Corpo
     \end{itemize}
 
@@ -322,15 +322,15 @@
 
     As linguas que seguem o paradigma funcional se caracterizam em criar 
     funcionalidade dentro de estruturas de fácil compreensão e definição. Isso ajuda a manter 
-    a fiabilidade, e leitura do código, principalmente quando integrado a forte tipagem. Além disso,
+    a confiabilidade, e leitura do código, principalmente quando integrado à forte tipagem. Além disso,
     táis códigos se caracterizam pelo alto nível de abstração, principalmente ao utilizar as funções,
     já que isso permite supressão de detalhes da programação, e garante uma menor probabilidade 
     de erros.
 
-    Em contraste, tais ideias podem se tornarem complicadas, quando utilizadas dentro de contextos
+    Em contraste, tais ideias podem se tornar complicadas, quando utilizadas dentro de contextos
     onde é necessário de muitas variáveis(Exemplo: Banco de Dados). Além disso, por conta que as funções 
-    possuem a característica de serem recursivas por padrão, elas tendem a ser mais ineficientes no sentido
-    computacionalmente, quando comparado as linguagens imperativas. Ainda nesse ponto, funções recursivas podem gerar maior uso de memória.
+    possuem a característica de serem recursivas por padrão, elas tendem a ser mais demoradas para computar, 
+    quando comparado as linguagens imperativas. Ainda nesse ponto, funções recursivas podem gerar maior uso de memória.
 
     %% Referencias dessa parte
 
@@ -346,14 +346,14 @@
 
     \chapter{Características mais marcantes da linguagem}
 
-    A linguagem Haskell pode nos apresentar características peculiares que a destaca, entre elas o Lazy Evaluatio ou também conhecido como 'laziness'. Como exemplo,
+    A linguagem Haskell pode nos apresentar características peculiares que a destaca, entre elas o Lazy Evaluation ou também conhecido como \emph{laziness}. Como exemplo,
     se ecrevermos um pequeno filtro ou parser em Haskell, não é necessário preocupar com os detalhes de ler input linha-por-linha ou bloco-por-bloco porque é possível
-    simplesmente utilizar 'getContents' e então encadear uma série de funções. Uma vez que se tenha o 'laziness' na entrada, se tem o 'laziness' na saída porque imprimir
+    simplesmente utilizar \emph{getContents} e então encadear uma série de funções. Uma vez que se tenha o \emph{laziness} na entrada, se tem o \emph{laziness} na saída porque imprimir
     algo não requer que tudo seja processado de uma só vez. Sendo assim, o programa fica com um design muito simples pois não é preciso lidar com buffers ou iterar sobre
     as linhas e ainda roda em um espaço constante.
 
-    Além da técnica descrita acima, Haskell também apresenta benefícios em termos de expressividade, alcançado por 'matching the patterns' e o fato de que funções podem
-    expressar coisas de forma sucinta mas legível, tornando mais fácil representar um problema e então, pensar na lógica, que é claramente identificável. Com Haskell,
+    Além da técnica descrita acima, Haskell também apresenta benefícios em termos de expressividade, alcançado por \emph{matching the patterns} e o fato de que funções podem
+    expressar coisas de forma sucinta, mas legível, tornando mais fácil representar um problema e então, pensar na lógica, que é claramente identificável. Com Haskell,
     manipula-se funções tão fácil quanto a linguagem Pear manipula strings.
 
     A linguagem Haskell, assim como todas as outras linguagens, tem suas sintaxes e estruturação próprias. O centro da organização de um programa, seja ele feito em Haskell ou não,
@@ -379,8 +379,8 @@
     \newpage 
 
     Podemos importar outros módulos dentro de um módulo que estamos criando. O corpo do módulo é onde estão as funções criadas para serem utilizadas. Mesmo podendo haver vários módulos
-    dentro de um mesmo arquivo, não é recomendado.
-    Dentro da linguagem Haskell temos vários tipos de dados primitivos, operadores lógicos e e alguns caracteres especiais. Quanto aos operadores lógicos, os mais comuns são:
+    dentro de um mesmo arquivo, mesmo não sendo recomendado.
+    Dentro da linguagem Haskell temos vários tipos de dados primitivos, operadores lógicos e alguns caracteres especiais. Quanto aos operadores lógicos, os mais comuns são:
     \&\&, || e not. Para os tipos de dados primitivos, temos: Bool, Int, Char, String, Float e Double - tipos comuns da maioria das linguagens de programação. 
     Além dos operadores lógicos, Haskell proporciona os operadores aritméticos:
 
@@ -414,15 +414,15 @@
       \centering
       \begin{tabular}{|c | c |}
         \hline 
-        '\symbol{92}t' & Marca de tabulação \\
+        `\symbol{92}t' & Marca de tabulação \\
         \hline 
-        '\symbol{92}n' & Nova linhas \\
+        `\symbol{92}n' & Nova linhas \\
         \hline 
-        '\symbol{92}\symbol{92}' & Barra invertida \\ 
+        `\symbol{92}\symbol{92}' & Barra invertida \\ 
         \hline 
-        '\symbol{92}'' & Aspas simples \\ 
+        `\symbol{92}'' & Aspas simples \\ 
         \hline 
-        '\symbol{92}''' & Aspas duplas \\
+        `\symbol{92}''' & Aspas duplas \\
         \hline 
       \end{tabular}
       \caption{Caracteres especiais}
@@ -442,21 +442,21 @@
     O nome da classe é um identificador e o tipo de entrada é para representar o tipo de dado, ou uma variável que atuaria como variável de tipo - possibilitando que a classe aceite qualquer tipo
     de dado na entrada. Sendo assim, o tipo de entrada pode ser tanto um inteiro, um char ou até uma string, dependendo da intenção do usuário.
 
-    Por fim, não podemos deixar de falar no tratamento de exceção em Haskell, que é feito, não surpreendentemente, por meio de expressões. O comando catch é uma função cujo primeiro parâmetro
-    uma expressão a executar e o segundo parâmetro é o que deve ser feito caso ocorra uma exceção. Além do comando catch, temos as palavras chaves raise e throw, que são utilizadas para definirmos
+    Por fim, não podemos deixar de falar no tratamento de exceção em Haskell, que é feito, não surpreendentemente, por meio de expressões. O comando \emph{catch} é uma função cujo primeiro parâmetro
+    uma expressão a executar e o segundo parâmetro é o que deve ser feito caso ocorra uma exceção. Além do comando \emph{catch}, temos as palavras chaves \emph{raise} e \emph{throw}, que são utilizadas para definirmos
     exceções definidas e especificadas pelo programador.
 
     \begin{itemize}
       \item Como dito anteriormente, a linguagem só faz utilização de funções e funções dentro de funções. Por isso
-      Haskell é descrito como puramente funcional.
+      Haskell é descrito como puramente funcional;
       \item Haskell possui uma sintaxe simples, elegante e concisa. Como resultado, programas em Haskell possuem 
-      poucas linhas. 
-      \item Além disso, a linguagem usa avaliação preguiçosa(Lazy evaluation), que é uma técnica para atrasar a computação 
-      até um ponto em que o resultado da computação é considerado necessário.
+      poucas linhas;
+      \item Além disso, a linguagem usa avaliação preguiçosa (\emph{Lazy evaluation}), que é uma técnica para atrasar a computação 
+      até um ponto em que o resultado da computação é considerado necessário;
       \item Tipagem estática: Verificação dos tipos usados em dados e variáveis para 
-      garantir que sempre está sendo usado um tipo que é esperado em todas as situações. 
+      garantir que sempre está sendo usado um tipo que é esperado em todas as situações; 
       \item Função de ordem superior: Função que tem como argumento uma outra função, ou que produz 
-      uma função como resultado.
+      uma função como resultado;
       \item Antes da execução de um programa, os compiladores e interpretadores realizam uma checagem forte de tipos
       de dados, verificação monomórfica e verificação polimórfica.
     \end{itemize}
@@ -499,12 +499,12 @@
 
       \section{Explicação dos algoritmos}
       Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
-      em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples que possui ou evoluindo
+      em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples ou evoluindo
       para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
 
       No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
-      foi declarado uma lista vazia, mas poderia ser uma lista contendo quaisquer valores. A segunda linha
-      cria uma função recursiva e 
+      foi declarado uma lista vazia para ser retornada caso o quicksort receba uma lista sem valores. A segunda linha
+      cria uma função recursiva, caso tenha valores na lista para serem ordenados.
 
       \subsection{Exemplo de Quicksort em Haskell usando a função filter}
 
@@ -533,24 +533,24 @@
     \addcontentsline{toc}{chapter}{Considerações finais}
 
     Após trabalhar nessa linguagem por quase um mês, ficou claro para toda a equipe que Haskell é uma linguagem diferenciada. Possui
-    uma história que foi essencial para sua formação, sem esquecer, é claro, que foi uma língua desenvolvida de forma comunitária.
-    Há grandes obstáculos em ingressar nessa língua, principalmente por documentação excassa e a documentação oficial em maioria ser
+    uma história que foi essencial para sua formação, sem esquecer, é claro, que foi uma lingua desenvolvida de forma comunitária.
+    Há grandes obstáculos em ingressar nessa lingua, principalmente por documentação excassa e a documentação oficial em maioria ser
     paga ou extremamente complexa para iniciantes. 
     
-    Por muito tempo, Haskell não foi uma língua unificada, cada pessoa que entrava no projeto criava uma versão diferente sem que um líder
-    principal coordenasse como ela estava evoluindo. Falta de uma unidade atrasou um pouco a língua ser adotada pela comunidade.
+    Por muito tempo, Haskell não foi uma lingua unificada, cada pessoa que entrava no projeto criava uma versão diferente sem que um líder
+    principal coordenasse como ela estava evoluindo. Falta de uma unidade atrasou um pouco a lingua ser adotada pela comunidade.
     Por conta da falta de uma documentação única, a dificuldade de aprendizado foi outro grande ponto negativo que impactou diretamente
     na falta de profissionais que a utilização, ficando apenas fechada em um ambiente científico como universidades.
 
     Entretanto depois de tudo que vimos, a linguagem se apresenta de forma bem mais positiva do que todas essas ideias
     citadas acima. Ela apresenta vários recursivos interessantes, como cálculos lambda, recursões simples e amarrações de funções
     em variáveis de forma simples. Há vários tutoriais distribuidos pela internet. Mesmo que
-    poucas pessoas programem nessa língua, possui uma comunidade bem forte que a mantém.
+    poucas pessoas programem nessa lingua, possui uma comunidade bem forte que a mantém.
 
     Por fim, o grupo entendeu que Haskell desempenhou seu papel na história da computação. Além disso,
     várias empresas ainda o adotam por entenderem a importância de seu uso, feito para cálculos científicos e precisos.
     Ainda dentro do contexto de programação funcional e uso de cálculos lambda, Haskell ainda é uma, se não a melhor,
-    língua para ser utilizado.
+    lingua para ser utilizado.
 
     \newpage
 
@@ -573,12 +573,12 @@
         outras linguagens precisariam ocupar 50 linhas, em apenas 2 ou 3 linhas, como foi o Quicksort.
 
         Além disso, lendo sua história, achei extremamente fascinante toda a concepção do Haskell,
-        mas fiquei até triste, vendo que é muito difícil encontrar muitas pessoas falando sobre essa linguagem, que nasceu 
+        mas fiquei triste vendo que é muito difícil encontrar muitas pessoas falando sobre essa linguagem, que nasceu 
         do esforço coletivo de vários programadores, mas que hoje não recebe tanto apoio como outras linguagens.
 
         Por fim, como curiosidade, eu estava procurando sobre como fazer interfaces em C++ quando
-        descobri que a WxWidgets, uma biblioteca para criar interface cross-platform , também possui 
-        sua versão para Haskell, chamada WxHaskell.
+        descobri que a \emph{WxWidgets}, uma biblioteca para criar interface cross-platform, também possui 
+        sua versão para Haskell, chamada \emph{WxHaskell}.
 
         \begin{figure}[ht]
           \includegraphics[width =\textwidth]{gebob.png}
@@ -590,8 +590,8 @@
         \chapter{Thiago Henriques}
         
         Bom, como posso expressar o que eu senti aprendendo sobre essa nova linguagem? Eu gosto muito das linguagens de alto nível, principalmente Python,
-        então no começo devo admitir que senti uma certa um desafio. Porém sinto que Haskell conseguiu cumprir o 
-        seu propósito e possibilitou a criação de novas.
+        então no começo devo admitir que senti um certo desafio. Porém, sinto que Haskell conseguiu cumprir o 
+        seu propósito e possibilitou a criação de novos.
 
         Em geral fiquei fascinado como a linguagem foi implementada e a tomada de decisão da equipe com o passar do tempo. A implementação
         possibilitou a adição de diversas funcionalidades únicas da linguagem e facilitou o desenvolvimento mais fluido da mesma.
@@ -600,8 +600,8 @@
 
         Eu observei que Haskell possui diversas implementações no mercado e muitos projetos de código aberto que utilizam da linguagem.
         Um dos projetos que eu achei muito interessante foi o Detexify, feito totalmente em Haskell, que tem como objetivo simplificar a 
-        busca de simbolos especiais para aqueles que trabalham em Latex. O usuário só precisa desenhar o símbolo em uma caixa para mostrar 
-        o comando do Latex.
+        busca de símbolos especiais para aqueles que trabalham em \LaTeX. O usuário só precisa desenhar o símbolo em uma caixa e
+        o comando será exibido em \LaTeX.
         
         \begin{figure}[ht]
           \centering
@@ -614,39 +614,39 @@
         \chapter{Lucas Santiago}
 
         Na minha opinião, Haskell se apresenta de uma forma muito diferente da maioria da outras línguas. 
-        Parafraseando Fábio Akita: Cada língua de programação não é mais do que uma ferramenta
+        Parafraseando Fábio Akita: cada lingua de programação não é mais do que uma ferramenta
         para resolver um problema.
 
         \begin{figure}[ht]
           \includegraphics[width =\textwidth]{fabio_akita_lingua.png}
-          \caption{\href{https://www.youtube.com/watch?v=p9-WuJbVHHc}{Fábio Akita explicando que linguas de programação são apenas feitas para resolver problemas!}}
+          \caption{\href{https://www.youtube.com/watch?v=p9-WuJbVHHc}{Fabio Akita explicando que linguas de programação são apenas feitas para resolver problemas!}}
         \end{figure}
 
         Os problemas que Haskell se propôs a resolver são cálculos matemáticos
-        funcionais. O paradigma funcional dessa língua torna ela bem resistente a efeitos colaterais. Além de ser uma língua
-        \emph{cross-platform}, extremamente importante para todas aquelas pessoas que precisem de uma língua que funcione
+        funcionais. O paradigma funcional dessa linguagem torna ela bem resistente a efeitos colaterais. Além de ser uma lingua
+        \emph{cross-platform}, extremamente importante para todas aquelas pessoas que precisem de uma lingua que funcione
         em qualquer sistema operacional. 
 
         Como um programador de C/C++ e Python, vejo que Haskell está em um nível intermediário entre essas línguas.
-        É interessante ver uma língua de alto nível com tipagem estática, torna o código bem estável - chances baixas de 
-        resultar em erros -, tipagem é fundamental quando se quer garantir precisão de valores e tipos nos cálculos.
+        É interessante ver uma lingua de alto nível com tipagem estática, torna o código bem estável - chances baixas de 
+        resultar em erros -, tipagem é fundamental quando se quer garantir precisão de valores nos cálculos.
 
         Concluindo, não foi tão intuitivo aprender Haskell, ele possui várias propriedades que não existem em nenhuma das línguas
         que conhecia. Entretando, isso foi extremamente positivo para mim, aprendi várias coisas novas. Abaixo há
-        mais um vídeo do Fábio Akita, dessa vez citando que nem sempre é fácil aprender algo novo. Em programação,
+        mais um vídeo do Fabio Akita, dessa vez citando que nem sempre é fácil aprender algo novo. Em programação,
         quando você aprende da forma correta, várias novas possibilidades de resolução de problemas começam a aparecer.
 
         \begin{figure}[ht]
           \includegraphics[width =\textwidth]{fabio_akita_programar_eh_dificil.png}
-          \caption{\href{https://www.youtube.com/watch?v=V7oUDL7E1g4}{Fábio Akita explicando que programação nem sempre é fácil.}}
+          \caption{\href{https://www.youtube.com/watch?v=V7oUDL7E1g4}{Fabio Akita explicando que programação nem sempre é fácil.}}
         \end{figure}
 
         \newpage
 
         \chapter{Pedro Souza}
 
-        Haskell definitivamente é uma linguagem um tanto quanto diferente das outras que são consideradas mais comuns, JAVA, C++, C\#, Javascript,
-        PYTHON, etc. Apesar de não ter uma sintaxe muito complexa, sua implementação pode ser um pouco estranhada para quem está começando a conhecer
+        Haskell definitivamente é uma linguagem um tanto quanto diferente das outras que são consideradas mais comuns Java, C++, C\#, Javascript,
+        Python, etc. Apesar de não ter uma sintaxe muito complexa, sua implementação pode ser um pouco estranhada para quem está começando a conhecer
         a linguagem. 
     
         O fato de ser baseada em expressões, Haskell se torna um tanto quanto amedrontador para programadores novos, com pouca experiência e que estão
@@ -655,7 +655,7 @@
         que necessariamente teriam de ser feitas com Haskell.
     
         Como muitas outras linguagens por aí, Haskell continua muito oculta, sem muito reconhecimento e fama, um grande exemplo disso é que se pesquisarmos
-        "Haskell" no google, encontraremos algum resultado sobre a linguagem apenas na segunda página e no último item encontrado. E aqui entre nós, quantas vezes vamos
+        ``Haskell'' no google, encontraremos algum resultado sobre a linguagem apenas na segunda página e no último item encontrado. E aqui entre nós, quantas vezes vamos
         até a segunda página do google em alguma pesquisa?
     
         \begin{figure}[ht]
