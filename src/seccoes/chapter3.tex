@@ -1,0 +1,75 @@
+\chapter{Paradigma a que pertence}
+
+    O paradigma oferece e determina a visão que o programador possui sobre a estruturação
+    e a execução do programa. Um exemplo bem famoso de paradigma é o POO (Programação orientada a objetos),
+    conhecido por ser o modelo para linguagens como C++ e Java.
+
+    A Programação funcional é um paradigma que descreve uma expressão matemática a ser avaliada,
+    mapeando dos valores de entradas nos valores de retorno, por meio de funções. Em outras palavras: 
+    a programação funcional é baseado em cima de funções que rodam no topo de outras funções. Programação 
+    funcional está englobada junto ao grupo da Programação descritiva.
+
+    Eis mais algumas características deste paradigma:
+
+    \section{Dados imutáveis} 
+
+    É possível declarar valores a variáveis, mas não pode mudar o valor 
+    delas durante a compilação. Isso acontece porque, diferente de linguagens imperativas(Como C), onde você
+    atribui um valor e pode mudá-lo em execuções, variáveis em Haskell(por exemplo) possuem tipagem forte, logo 
+    não sofrem efeitos colaterais(\emph{side effects}).
+
+    \section{Funções puras}
+
+    Também presentes em linguagens como JavaScript e Python, Funções puras são aquelas que recebem 
+    um parâmetro \emph{input} e sempre vão retornar o mesmo \emph{input} sem causar efeitos colatreis
+    ao programa.
+
+    Esse tipo de função é positiva pelos seguintes aspectos:
+    
+    \begin{itemize}
+      \item facilita execução de códigos em paralelo, pois não impactam outras funcionalidades que estão em atuação;
+      \item Maior facilidade em criar cache, já que os mesmos parâmetros são sempre esperados.
+    \end{itemize} 
+
+    \newpage
+
+    \section{Cálculo Lambda}
+    
+    Como mencionado anteriormente, o Cálculo Lambda está presente na programação funcional, e em Haskell não é diferente.
+    Nessa lingua, é possível utilizar as chamadas \emph{Expressões lambda} que são funções anônimas(sem nome), formadas por 
+    uma sequência de padrões:
+
+    \begin{itemize}
+      \item Argumentos da função
+      \item Corpo
+    \end{itemize}
+
+    \begin{gather*}
+      \text{Função anônima para calcular o dobro de x} \\ x \rightarrow x + x 
+    \end{gather*}
+
+    \section{Análise crítica} 
+
+    As linguas que seguem o paradigma funcional se caracterizam em criar 
+    funcionalidade dentro de estruturas de fácil compreensão e definição. Isso ajuda a manter 
+    a confiabilidade, e leitura do código, principalmente quando integrado à forte tipagem. Além disso,
+    táis códigos se caracterizam pelo alto nível de abstração, principalmente ao utilizar as funções,
+    já que isso permite supressão de detalhes da programação, e garante uma menor probabilidade 
+    de erros.
+
+    Em contraste, tais ideias podem se tornar complicadas, quando utilizadas dentro de contextos
+    onde é necessário de muitas variáveis(Exemplo: Banco de Dados). Além disso, por conta que as funções 
+    possuem a característica de serem recursivas por padrão, elas tendem a ser mais demoradas para computar, 
+    quando comparado as linguagens imperativas. Ainda nesse ponto, funções recursivas podem gerar maior uso de memória.
+
+    %% Referencias dessa parte
+
+    \nocite{haskellslides}
+    \nocite{funcoespura}
+    \nocite{funcoespura2}
+    \nocite{haskellwikipedia}
+    \nocite{abntex2-wiki-como-customizar}
+
+    %%
+
+    \newpage

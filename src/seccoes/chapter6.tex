@@ -1,0 +1,50 @@
+\chapter{Exemplo(s) de programa(s)}
+
+\setcounter{section}{0}
+
+\section{Hello World em Haskell}
+\lstinputlisting[language=haskell]{helloworld.hs}
+
+\section{Quicksort}
+\subsection{Exemplo de Quicksort em C}
+
+\lstinputlisting[language=c]{quicksort.c}
+\subsection{Exemplo de Quicksort em Haskell usando compreensão de lista} 
+
+\lstinputlisting[language=haskell]{quicksort_list.hs}      
+
+\newpage
+
+\subsection{Exemplo de Quicksort em Haskell usando a função filter}
+
+\lstinputlisting[language=haskell]{quicksort_filter.hs}
+
+\section{Explicação dos algoritmos}
+Os algoritmos em Haskell são extremamente compactos em relação à C. Sua sintaxe não tem foco
+em programar diretamente a memória, como acontece em C. Começando pelo \emph{Hello World} simples ou evoluindo
+para um quicksort, a lingua mostra-se bem compacta e direta na resolução do problema.
+
+No primeiro exemplo, foi usado \emph{list comprehension} para resolver o problema. Na primeira linha,
+foi declarado uma lista vazia para ser retornada caso o quicksort receba uma lista sem valores. A segunda linha
+cria uma função recursiva, caso tenha valores na lista para serem ordenados.
+
+\subsection{Exemplo de Quicksort em Haskell usando a função filter}
+
+\lstinputlisting[language=haskell]{quicksort_c2haskell.hs}
+
+Esse é um modelo traduzido diretamente do exemplo do quicksort em C para Haskell. Modelo resumido usando recursos da linguagem
+abaixo:
+
+\subsection{Exemplo de Quicksort em Haskell usando a função filter} 
+
+\lstinputlisting[language=haskell]{quicksort_c2Haskellresumido.hs}
+
+Mesmo resumindo o código, a forma imperativa para o quicksort não parece ser uma boa opção, usar o quicksort de forma recursiva
+dentro do Haskell torna o código muito mais simples e intuitivo.
+
+\nocite{beginnersbook}
+\nocite{qastack}
+\nocite{haskellreport98}
+\nocite{progfuncional}
+
+\newpage

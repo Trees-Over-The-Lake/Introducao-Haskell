@@ -1,0 +1,118 @@
+\chapter{Características mais marcantes da linguagem}
+
+A linguagem Haskell pode nos apresentar características peculiares que a destaca, entre elas o Lazy Evaluation ou também conhecido como \emph{laziness}. Como exemplo,
+se ecrevermos um pequeno filtro ou parser em Haskell, não é necessário preocupar com os detalhes de ler input linha-por-linha ou bloco-por-bloco porque é possível
+simplesmente utilizar \emph{getContents} e então encadear uma série de funções. Uma vez que se tenha o \emph{laziness} na entrada, se tem o \emph{laziness} na saída porque imprimir
+algo não requer que tudo seja processado de uma só vez. Sendo assim, o programa fica com um design muito simples pois não é preciso lidar com buffers ou iterar sobre
+as linhas e ainda roda em um espaço constante.
+
+Além da técnica descrita acima, Haskell também apresenta benefícios em termos de expressividade, alcançado por \emph{matching the patterns} e o fato de que funções podem
+expressar coisas de forma sucinta, mas legível, tornando mais fácil representar um problema e então, pensar na lógica, que é claramente identificável. Com Haskell,
+manipula-se funções tão fácil quanto a linguagem Pear manipula strings.
+
+A linguagem Haskell, assim como todas as outras linguagens, tem suas sintaxes e estruturação próprias. O centro da organização de um programa, seja ele feito em Haskell ou não,
+está definido nas funções que são criadas, porém, existem outros fatores importantes a serem observados.
+Nas primeiras linhas do programa são descritos os módulos que serão utilizados pelo mesmo. Para utilizar um módulo dentro de um programa basta colocar a seguinte declaração:
+
+\begin{gather*}
+  import<nomeDoMódulo> as <nomeEspecifico> \\
+  \text{Como importar módulos}
+\end{gather*}
+
+Já a criação de módulos é diferente, o cabeçalho deve ser escrito da seguinte forma:
+
+\begin{gather*}
+  module<nomeDoMódulo>where \\
+  <import<nomeDoMódulo> \\
+  <declaraçãoDasFunçõesAseremExportadas> \\
+  <declaraçãoDasVariáveisAseremExportadas> \\
+  corpoDoMódulo \\
+  \text{Cabeçalho de um módulo}
+\end{gather*}
+
+\newpage 
+
+Podemos importar outros módulos dentro de um módulo que estamos criando. O corpo do módulo é onde estão as funções criadas para serem utilizadas. Mesmo podendo haver vários módulos
+dentro de um mesmo arquivo, mesmo não sendo recomendado.
+Dentro da linguagem Haskell temos vários tipos de dados primitivos, operadores lógicos e alguns caracteres especiais. Quanto aos operadores lógicos, os mais comuns são:
+\&\&, || e not. Para os tipos de dados primitivos, temos: Bool, Int, Char, String, Float e Double - tipos comuns da maioria das linguagens de programação. 
+Além dos operadores lógicos, Haskell proporciona os operadores aritméticos:
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|c | c |}
+    \hline 
+    + & Soma \\
+    \hline 
+    - & Subtração \\
+    \hline 
+    * & Multiplicação \\ 
+    \hline 
+    ${\wedge}$ & Potência \\ 
+    \hline 
+    div & Divisão inteira \\
+    \hline 
+    mod & Resto de divisão \\ 
+    \hline 
+    abs & Valor absoluto de um inteiro \\
+    \hline 
+    negate & Troca o sinal do valor \\
+    \hline 
+  \end{tabular}
+  \caption{Operadores aritméticos}
+\end{table}
+
+Para finalizar os tipos primitivos em Haskell, os caracteres especiais possuem as seguintes representações:
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|c | c |}
+    \hline 
+    `\symbol{92}t' & Marca de tabulação \\
+    \hline 
+    `\symbol{92}n' & Nova linhas \\
+    \hline 
+    `\symbol{92}\symbol{92}' & Barra invertida \\ 
+    \hline 
+    `\symbol{92}'' & Aspas simples \\ 
+    \hline 
+    `\symbol{92}''' & Aspas duplas \\
+    \hline 
+  \end{tabular}
+  \caption{Caracteres especiais}
+\end{table}
+
+Em Haskell, é possível criar tipos abstratos de dados, como tuplas e listas. Em uma tupla, podemos inserir um número determinado de dados com tipos predefinidos, já em uma lista os dados são
+todos do mesmo tipo (possibilitando a criação de uma lista que contenha tuplas, desde que os tipos de dados dentro das tuplas sejam iguais entre si). Apesar de serem tipos de dados abstratos,
+tuplas e listas não são as únicas dentro da linguagem, Haskell nos permite criar classes dentro dele.
+As classes em Haskell, são semelhantes às classes na orientação de objetos, com algumas implementações diferentes.
+Para começar uma classe, temos uma expressão como mostrada abaixo:
+
+\begin{gather*}
+  class<nomeDaClasse><tipoDeEntrada>where<assinaturaDaClasse> \\
+  \text{Definindo uma classe}
+\end{gather*}
+
+O nome da classe é um identificador e o tipo de entrada é para representar o tipo de dado, ou uma variável que atuaria como variável de tipo - possibilitando que a classe aceite qualquer tipo
+de dado na entrada. Sendo assim, o tipo de entrada pode ser tanto um inteiro, um char ou até uma string, dependendo da intenção do usuário.
+
+Por fim, não podemos deixar de falar no tratamento de exceção em Haskell, que é feito, não surpreendentemente, por meio de expressões. O comando \emph{catch} é uma função cujo primeiro parâmetro
+uma expressão a executar e o segundo parâmetro é o que deve ser feito caso ocorra uma exceção. Além do comando \emph{catch}, temos as palavras chaves \emph{raise} e \emph{throw}, que são utilizadas para definirmos
+exceções definidas e especificadas pelo programador.
+
+\begin{itemize}
+  \item Como dito anteriormente, a linguagem só faz utilização de funções e funções dentro de funções. Por isso
+  Haskell é descrito como puramente funcional;
+  \item Haskell possui uma sintaxe simples, elegante e concisa. Como resultado, programas em Haskell possuem 
+  poucas linhas;
+  \item Além disso, a linguagem usa avaliação preguiçosa (\emph{Lazy evaluation}), que é uma técnica para atrasar a computação 
+  até um ponto em que o resultado da computação é considerado necessário;
+  \item Tipagem estática: Verificação dos tipos usados em dados e variáveis para 
+  garantir que sempre está sendo usado um tipo que é esperado em todas as situações; 
+  \item Função de ordem superior: Função que tem como argumento uma outra função, ou que produz 
+  uma função como resultado;
+  \item Antes da execução de um programa, os compiladores e interpretadores realizam uma checagem forte de tipos
+  de dados, verificação monomórfica e verificação polimórfica.
+\end{itemize}
+
+\newpage
